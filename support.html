@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Awards Finder — Support</title>
+  <meta name="description" content="Get help with Awards Finder. Contact support, find FAQs, and learn how to manage your account and data."/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --brand-primary: #1967d2; /* theme.colorBlue */
+      --brand-accent: #fca311;  /* theme.colorGold */
+    }
+    body { font-family: 'Inter', sans-serif; }
+    .cta { background-color: var(--brand-primary); color: #fff; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Header -->
+  <header id="header" class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="./index.html" class="flex items-center space-x-2">
+        <img src="./images/appLogoBig.png" alt="Awards Finder Logo" class="h-8 w-8"/>
+        <span class="text-xl font-bold">Awards Finder</span>
+      </a>
+      <nav class="hidden md:flex items-center space-x-6">
+        <a href="./index.html#features" class="text-gray-600 hover:text-[color:var(--brand-primary)]">Features</a>
+        <a href="./index.html#how-it-works" class="text-gray-600 hover:text-[color:var(--brand-primary)]">How It Works</a>
+        <a href="./policy.html" class="text-gray-600 hover:text-[color:var(--brand-primary)]">Privacy</a>
+      </nav>
+      <a href="./index.html#download" class="hidden md:inline-block px-4 py-2 rounded-full cta">Get the App</a>
+      <button id="mobile-menu-button" class="md:hidden text-gray-700" aria-label="Open Menu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 bg-white/95 border-t">
+      <a href="./index.html#features" class="block py-2 text-gray-700 hover:text-[color:var(--brand-primary)]">Features</a>
+      <a href="./index.html#how-it-works" class="block py-2 text-gray-700 hover:text-[color:var(--brand-primary)]">How It Works</a>
+      <a href="./policy.html" class="block py-2 text-gray-700 hover:text-[color:var(--brand-primary)]">Privacy</a>
+      <a href="./index.html#download" class="block mt-3 text-center px-5 py-2 rounded-full cta">Get the App</a>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-6 py-10">
+    <div class="max-w-4xl mx-auto space-y-10">
+      <section class="bg-white rounded-xl shadow-sm p-6 md:p-10">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900">Support</h1>
+        <p class="mt-3 text-gray-700">
+          Need help with Awards Finder? We’re here to assist with account issues, subscriptions, alerts, data requests, and more.
+        </p>
+
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="p-5 rounded-lg border border-gray-200">
+            <h2 class="text-xl font-semibold text-gray-900">Contact</h2>
+            <p class="mt-2 text-gray-700">
+              Email our support team:
+              <a class="text-blue-600 underline" href="mailto:support@awardsfinder.app">support@awardsfinder.app</a>
+            </p>
+            <p class="mt-2 text-gray-700">
+              Please include your platform (iOS/Android), app version, and steps to reproduce any issue.
+            </p>
+          </div>
+          <div class="p-5 rounded-lg border border-gray-200">
+            <h2 class="text-xl font-semibold text-gray-900">Privacy & Data</h2>
+            <p class="mt-2 text-gray-700">
+              For account deletion or data deletion requests, see:
+            </p>
+            <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
+              <li><a class="text-blue-600 underline" href="./deleteaccount.html">Delete Account</a></li>
+              <li><a class="text-blue-600 underline" href="./deletedata.html">Delete Data</a></li>
+              <li><a class="text-blue-600 underline" href="./policy.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white rounded-xl shadow-sm p-6 md:p-10">
+        <h2 class="text-2xl font-bold text-gray-900">FAQs</h2>
+        <div class="mt-4 space-y-6">
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900">How do alerts work?</h3>
+            <p class="mt-1 text-gray-700">
+              Create an alert for your route, date range, cabin, and programs. We monitor availability and notify you when matching seats appear.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900">How do I manage my subscription?</h3>
+            <p class="mt-1 text-gray-700">
+              Subscriptions are managed through the App Store or Google Play. Changes and cancellations must be done from your platform’s subscriptions settings.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900">Can I transfer points through the app?</h3>
+            <p class="mt-1 text-gray-700">
+              Awards Finder helps you discover award space and compare programs. Points transfers are performed via your bank or airline program.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="bg-gray-900 text-white">
+    <div class="container mx-auto px-6 py-8">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <img src="./images/appLogoBig.png" alt="Awards Finder Logo" class="h-8 w-8"/>
+          <span class="text-xl font-bold">Awards Finder</span>
+        </div>
+        <div class="flex mt-4 md:mt-0 space-x-6">
+          <a href="./policy.html" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+          <a href="./index.html#download" class="text-gray-400 hover:text-white transition">Get the App</a>
+        </div>
+      </div>
+      <div class="mt-8 text-center text-gray-400">
+        &copy; <span id="copy-year"></span> Awards Finder — PureHabit. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+  <script>
+    // Fallback year if external script not loaded
+    (function(){var y=document.getElementById('copy-year'); if(y){y.textContent = new Date().getFullYear();}})();
+  </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Awards Finder — Delete Data</title>
+  <meta name="description" content="Request deletion of your personal data stored by Awards Finder. Learn what data is removed and how to submit your request."/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --brand-primary: #1967d2; /* theme.colorBlue */
+      --brand-accent: #fca311;  /* theme.colorGold */
+    }
+    body { font-family: 'Inter', sans-serif; }
+    .cta { background-color: var(--brand-primary); color: #fff; }
+    .link { color: var(--brand-primary); }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Header -->
+  <header id="header" class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="./index.html" class="flex items-center space-x-2">
+        <img src="./images/appLogoBig.png" alt="Awards Finder Logo" class="h-8 w-8"/>
+        <span class="text-xl font-bold">Awards Finder</span>
+      </a>
+      <nav class="hidden md:flex items-center space-x-6">
+        <a href="./index.html#features" class="text-gray-600 hover:text-[color:var(--brand-primary)]">Features</a>
+        <a href="./index.html#how-it-works" class="text-gray-600 hover:text-[color:var(--brand-primary)]">How It Works</a>
+        <a href="./support.html" class="text-gray-600 hover:text-[color:var(--brand-primary)]">Support</a>
+        <a href="./policy.html" class="text-gray-600 hover:text-[color:var(--brand-primary)]">Privacy</a>
+      </nav>
+      <a href="./index.html#download" class="hidden md:inline-block px-4 py-2 rounded-full cta">Get the App</a>
+      <button id="mobile-menu-button" class="md:hidden text-gray-700" aria-label="Open Menu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 bg-white/95 border-t">
+      <a href="./index.html#features" class="block py-2 text-gray-700 hover:text-[color:var(--brand-primary)]">Features</a>
+      <a href="./index.html#how-it-works" class="block py-2 text-gray-700 hover:text-[color:var(--brand-primary)]">How It Works</a>
+      <a href="./support.html" class="block py-2 text-gray-700 hover:text-[color:var(--brand-primary)]">Support</a>
+      <a href="./policy.html" class="block py-2 text-gray-700 hover:text-[color:var(--brand-primary)]">Privacy</a>
+      <a href="./index.html#download" class="block mt-3 text-center px-5 py-2 rounded-full cta">Get the App</a>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-6 py-10">
+    <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-sm p-6 md:p-10">
+      <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900">Delete Personal Data</h1>
+      <p class="mt-3 text-gray-700">
+        You can request deletion of your personal data stored by Awards Finder. Once completed, the process is irreversible for the deleted records.
+      </p>
+
+      <section class="mt-6">
+        <h2 class="text-xl font-semibold text-gray-900">Data that can be deleted</h2>
+        <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
+          <li>Award alerts and associated preferences</li>
+          <li>Saved routes, searches, and filters</li>
+          <li>Point wallet entries and optional profile fields</li>
+          <li>Contact details used for notifications (email/push tokens)</li>
+        </ul>
+      </section>
+
+      <section class="mt-8">
+        <h2 class="text-xl font-semibold text-gray-900">Records that may be retained temporarily</h2>
+        <p class="mt-2 text-gray-700">
+          Some records may be retained for a limited period to comply with legal obligations, billing, security, and fraud prevention.
+          After retention periods expire, they are deleted or anonymized.
+        </p>
+      </section>
+
+      <section class="mt-8">
+        <h2 class="text-xl font-semibold text-gray-900">How to submit your request</h2>
+        <p class="mt-2 text-gray-700">
+          Email our support team from the email address associated with your account:
+        </p>
+        <p class="mt-3">
+          <a class="link underline font-medium" href="mailto:support@awardsfinder.app?subject=Data%20Deletion%20Request&body=Please%20delete%20my%20personal%20data%20stored%20by%20Awards%20Finder.%0A%0ARegistered%20email:%20%0APlatform%20(iOS/Android):%20%0ASpecific%20data%20to%20delete%20(optional):%20">support@awardsfinder.app</a>
+        </p>
+        <p class="mt-3 text-gray-600">
+          For faster processing, include your registered email, platform (iOS/Android), and any specific data you want removed.
+        </p>
+      </section>
+
+      <section class="mt-8">
+        <h2 class="text-xl font-semibold text-gray-900">Verification</h2>
+        <p class="mt-2 text-gray-700">
+          We may ask you to verify your request by replying from the registered email address or confirming a code sent to your device.
+        </p>
+      </section>
+
+      <section class="mt-8">
+        <h2 class="text-xl font-semibold text-gray-900">Need help?</h2>
+        <p class="mt-2 text-gray-700">
+          Visit <a class="link underline" href="./support.html">Support</a> or review our <a class="link underline" href="./policy.html">Privacy Policy</a>.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="bg-gray-900 text-white">
+    <div class="container mx-auto px-6 py-8">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <img src="./images/appLogoBig.png" alt="Awards Finder Logo" class="h-8 w-8"/>
+          <span class="text-xl font-bold">Awards Finder</span>
+        </div>
+        <div class="flex mt-4 md:mt-0 space-x-6">
+          <a href="./policy.html" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+          <a href="./index.html#download" class="text-gray-400 hover:text-white transition">Get the App</a>
+        </div>
+      </div>
+      <div class="mt-8 text-center text-gray-400">
+        &copy; <span id="copy-year"></span> Awards Finder — PureHabit. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+  <script>
+    // Fallback year if external script fails to load
+    (function(){var y=document.getElementById('copy-year'); if(y){y.textContent = new Date().getFullYear();}})();
+  </script>
+</body>
+</html>

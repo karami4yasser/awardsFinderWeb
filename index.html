@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Awards Finder — Find and Track Award Flights</title>
+  <meta name="description" content="Search, track, and book award flights. Set alerts, compare programs, and maximize your points with Awards Finder."/>
+  <meta name="keywords" content="award flights, points, miles, alerts, airlines, credit cards, redemption, flight awards, award availability"/>
+  <link rel="canonical" href="https://awardsfinder.app"/>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --brand-primary: #1967d2; /* theme.colorBlue */
+      --brand-accent: #fca311;  /* theme.colorGold */
+      --brand-neutral: #1A1F24;
+    }
+    body { font-family: 'Inter', sans-serif; }
+
+    .hero-bg {
+      background: linear-gradient(180deg, rgba(25,103,210,0.06), rgba(25,103,210,0.02));
+    }
+    .gradient-text {
+      background: linear-gradient(to right, var(--brand-primary), var(--brand-accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .cta-button {
+      transition: all 0.3s ease;
+      background-color: var(--brand-primary);
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(25,103,210,0.25);
+    }
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(25,103,210,0.35);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800">
+  <!-- Header -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <img src="images/appLogoBig.png" alt="Awards Finder Logo" class="h-8 w-8"/>
+          <span class="text-2xl font-bold text-gray-900">Awards Finder</span>
+        </div>
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="#features" class="text-gray-600 hover:text-[color:var(--brand-primary)] transition">Features</a>
+          <a href="#how-it-works" class="text-gray-600 hover:text-[color:var(--brand-primary)] transition">How It Works</a>
+          <a href="#testimonials" class="text-gray-600 hover:text-[color:var(--brand-primary)] transition">Testimonials</a>
+        </nav>
+        <a href="#download" class="hidden md:inline-block font-semibold px-5 py-2 rounded-full cta-button">Get the App</a>
+        <button id="mobile-menu-button" class="md:hidden text-gray-700" aria-label="Open Menu">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 bg-white/95 border-t">
+      <a href="#features" class="block py-2 text-gray-700 hover:text-[color:var(--brand-primary)]">Features</a>
+      <a href="#how-it-works" class="block py-2 text-gray-700 hover:text-[color:var(--brand-primary)]">How It Works</a>
+      <a href="#testimonials" class="block py-2 text-gray-700 hover:text-[color:var(--brand-primary)]">Testimonials</a>
+      <a href="#download" class="block mt-4 text-center font-semibold px-5 py-2 rounded-full cta-button">Get the App</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-bg pt-24 md:pt-32">
+      <div class="container mx-auto px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+          <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
+            Find Award Flights Fast. <br/>
+            <span class="gradient-text">Search Smarter. Redeem Better.</span>
+          </h1>
+          <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+            Discover award availability, set alerts, and use your points where they matter.
+          </p>
+
+          <div class="mt-8 flex justify-center items-center space-x-4">
+            <a href="#" target="_blank" aria-label="Download on App Store" rel="nofollow noopener">
+              <img src="./images/appstore-icon.png" alt="Download Awards Finder on the App Store" class="w-40 md:w-44 h-auto"/>
+            </a>
+            <a href="#" target="_blank" aria-label="Download on Google Play" rel="nofollow noopener">
+              <img src="./images/playstore-icon.png" alt="Download Awards Finder on Google Play" class="w-40 md:w-44 h-auto"/>
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-12 flex justify-center">
+          <img
+            src="images/app_screen.png"
+            alt="Awards Finder App Screenshot"
+            class="rounded-3xl shadow-2xl max-w-xs transform hover:scale-105 transition-transform duration-500"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='https://placehold.co/300x600/cccccc/ffffff?text=Image+Error';"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold">Tools for Your Award Travel</h2>
+          <p class="mt-4 text-lg text-gray-600">Everything you need to discover, track, and redeem award flights efficiently.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Feature 1 -->
+          <div class="text-center p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
+            <div class="flex items-center justify-center h-16 w-16 mx-auto bg-[color:rgba(25,103,210,0.10)] rounded-full">
+              <svg class="w-8 h-8 text-[color:var(--brand-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12M8 12h12M8 17h12M3 7h.01M3 12h.01M3 17h.01"/>
+              </svg>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold">Powerful Award Search</h3>
+            <p class="mt-2 text-gray-600">Scan routes and dates to surface real award seats across programs.</p>
+          </div>
+          <!-- Feature 2 -->
+          <div class="text-center p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
+            <div class="flex items-center justify-center h-16 w-16 mx-auto bg-[color:rgba(25,103,210,0.10)] rounded-full">
+              <svg class="w-8 h-8 text-[color:var(--brand-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+              </svg>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold">Real-time Alerts</h3>
+            <p class="mt-2 text-gray-600">Get notified when award space opens that matches your criteria.</p>
+          </div>
+          <!-- Feature 3 -->
+          <div class="text-center p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
+            <div class="flex items-center justify-center h-16 w-16 mx-auto bg-[color:rgba(25,103,210,0.10)] rounded-full">
+              <svg class="w-8 h-8 text-[color:var(--brand-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5v14h10a2 2 0 002-2v-2M7 9h6m-6 4h6m-6 4h6M19 7l-2-2m0 0l-2 2m2-2v6"/>
+              </svg>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold">Point Wallet</h3>
+            <p class="mt-2 text-gray-600">Track balances across bank and airline programs in one place.</p>
+          </div>
+          <!-- Feature 4 -->
+          <div class="text-center p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
+            <div class="flex items-center justify-center h-16 w-16 mx-auto bg-[color:rgba(25,103,210,0.10)] rounded-full">
+              <svg class="w-8 h-8 text-[color:var(--brand-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold">Smart Filters</h3>
+            <p class="mt-2 text-gray-600">Filter by cabins, stops, aircraft, and partner programs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold">Get Started in 3 Easy Steps</h2>
+          <p class="mt-4 text-lg text-gray-600">Plan, monitor, and book your next redemption.</p>
+        </div>
+        <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
+          <!-- Step 1 -->
+          <div class="flex flex-col items-center text-center max-w-xs">
+            <div class="relative mb-4">
+              <div class="flex items-center justify-center h-24 w-24 bg-white border-2 border-blue-200 rounded-full text-[color:var(--brand-primary)] text-3xl font-bold">1</div>
+            </div>
+            <h3 class="text-xl font-semibold">Set Your Route</h3>
+            <p class="mt-2 text-gray-600">Choose origin, destination, dates, cabin, and stops.</p>
+          </div>
+          <!-- Step 2 -->
+          <div class="flex flex-col items-center text-center max-w-xs">
+            <div class="relative mb-4">
+              <div class="flex items-center justify-center h-24 w-24 bg-white border-2 border-blue-200 rounded-full text-[color:var(--brand-primary)] text-3xl font-bold">2</div>
+            </div>
+            <h3 class="text-xl font-semibold">Choose Programs</h3>
+            <p class="mt-2 text-gray-600">Select airline and bank partners you can transfer from.</p>
+          </div>
+          <!-- Step 3 -->
+          <div class="flex flex-col items-center text-center max-w-xs">
+            <div class="relative mb-4">
+              <div class="flex items-center justify-center h-24 w-24 bg-white border-2 border-blue-200 rounded-full text-[color:var(--brand-primary)] text-3xl font-bold">3</div>
+            </div>
+            <h3 class="text-xl font-semibold">Create Alerts</h3>
+            <p class="mt-2 text-gray-600">We watch availability and notify you instantly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold">Loved by Award Travelers</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="bg-gray-50 p-8 rounded-xl shadow-sm">
+            <p class="text-gray-600">"Found business class seats I couldn't see anywhere else. Alerts made it effortless."</p>
+            <div class="flex items-center mt-6">
+              <img src="https://placehold.co/48x48/E0E0E0/333333?text=JS" class="w-12 h-12 rounded-full" alt="User Avatar"/>
+              <div class="ml-4">
+                <p class="font-semibold">Jessica S.</p>
+                <p class="text-sm text-gray-500">Marketing Manager</p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 2 -->
+          <div class="bg-gray-50 p-8 rounded-xl shadow-sm">
+            <p class="text-gray-600">"Transferred points and booked within minutes. The filters are spot on."</p>
+            <div class="flex items-center mt-6">
+              <img src="https://placehold.co/48x48/E0E0E0/333333?text=MD" class="w-12 h-12 rounded-full" alt="User Avatar"/>
+              <div class="ml-4">
+                <p class="font-semibold">Mark D.</p>
+                <p class="text-sm text-gray-500">Software Engineer</p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 3 -->
+          <div class="bg-gray-50 p-8 rounded-xl shadow-sm">
+            <p class="text-gray-600">"Booked a family trip on miles for the first time. Saved a ton."</p>
+            <div class="flex items-center mt-6">
+              <img src="https://placehold.co/48x48/E0E0E0/333333?text=AK" class="w-12 h-12 rounded-full" alt="User Avatar"/>
+              <div class="ml-4">
+                <p class="font-semibold">Anna K.</p>
+                <p class="text-sm text-gray-500">Teacher</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="download" class="hero-bg">
+      <div class="container mx-auto px-6 py-20 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Start Finding Award Flights Today</h2>
+        <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+          Join travelers saving time and points with smarter award searches.
+        </p>
+        <div class="mt-8 flex justify-center items-center space-x-4">
+          <a href="#" target="_blank" aria-label="Download on App Store" rel="nofollow noopener">
+            <img src="./images/appstore-icon.png" alt="Download Awards Finder on the App Store"/>
+          </a>
+          <a href="#" target="_blank" aria-label="Download on Google Play" rel="nofollow noopener">
+            <img src="./images/playstore-icon.png" alt="Download Awards Finder on Google Play"/>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white">
+    <div class="container mx-auto px-6 py-8">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <img src="images/appLogoBig.png" alt="Awards Finder Logo" class="h-8 w-8"/>
+          <span class="text-2xl font-bold">Awards Finder</span>
+        </div>
+        <div class="flex mt-4 md:mt-0 space-x-6">
+          <a href="./policy.html" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+          <a href="./policy.html#terms" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+          <a href="./support.html" class="text-gray-400 hover:text-white transition">Contact</a>
+        </div>
+      </div>
+      <div class="mt-8 text-center text-gray-400">
+        &copy; <span id="copy-year"></span> Awards Finder — PureHabit. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- External site script (handles theme, scroll, menu, copy, etc.) -->
+  <script src="./script.js"></script>
+  <script>
+    // Minimal year fallback in case external script fails to load
+    (function(){var y=document.getElementById('copy-year'); if(y){y.textContent = new Date().getFullYear();}})();
+  </script>
+</body>
+</html>
