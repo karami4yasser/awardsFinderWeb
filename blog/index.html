@@ -54,6 +54,10 @@
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(25,103,210,0.35);
     }
+    .badge {
+      display:inline-flex; align-items:center; padding:4px 10px; font-size:12px;
+      border-radius:999px; background:#eef2ff; color:#3730a3;
+    }
   </style>
 
   <!-- JSON-LD: Blog -->
@@ -87,7 +91,6 @@
       <nav class="hidden md:flex items-center space-x-6">
         <a href="../index.html#features" class="text-gray-600 hover:text-[color:var(--brand-primary)]">Features</a>
         <a href="../index.html#how-it-works" class="text-gray-600 hover:text-[color:var(--brand-primary)]">How It Works</a>
-        <a href="../index.html#testimonials" class="text-gray-600 hover:text-[color:var(--brand-primary)]">Testimonials</a>
         <a href="./index.html" class="text-gray-900 font-semibold">Blog</a>
         <a href="../support.html" class="text-gray-600 hover:text-[color:var(--brand-primary)]">Support</a>
       </nav>
@@ -101,7 +104,6 @@
     <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 bg-white/95 border-t">
       <a href="../index.html#features" class="block py-2 text-gray-700 hover:text-[color:var(--brand-primary)]">Features</a>
       <a href="../index.html#how-it-works" class="block py-2 text-gray-700 hover:text-[color:var(--brand-primary)]">How It Works</a>
-      <a href="../index.html#testimonials" class="block py-2 text-gray-700 hover:text-[color:var(--brand-primary)]">Testimonials</a>
       <a href="./index.html" class="block py-2 text-gray-900 font-semibold">Blog</a>
       <a href="../index.html#download" class="block mt-3 text-center px-5 py-2 rounded-full cta-button">Get the App</a>
     </div>
@@ -122,34 +124,121 @@
 
     <!-- Posts list -->
     <section class="py-10 md:py-16 bg-white">
-      <div class="container mx-auto px-6 max-w-5xl">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <!-- Post card 1 -->
+      <div class="container mx-auto px-6 max-w-6xl">
+        <div class="mb-6 flex items-center justify-between">
+          <h2 class="text-2xl md:text-3xl font-bold">Latest Posts</h2>
+          <a href="/feed.xml" class="hidden md:inline-flex items-center px-4 py-2 rounded-full cta-button">Subscribe (RSS)</a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Nov 7, 2025 (10 new posts) -->
           <article class="p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
-            <a href="./posts/how-to-find-award-flights-2025.html" class="block">
-              <h2 class="text-2xl font-bold text-gray-900">How to Find Award Flights in 2025: A Practical Guide</h2>
+            <a href="./posts/beginners-guide-points-miles-2025.html" class="block">
+              <span class="badge">Guides</span>
+              <h3 class="mt-2 text-2xl font-semibold text-gray-900">Beginner’s Guide to Points and Miles in 2025</h3>
             </a>
-            <p class="mt-3 text-gray-600">
-              Learn a repeatable process for surfacing real award seats across major alliances, plus tactics for alerts and timing.
-            </p>
-            <div class="mt-4 flex items-center justify-between text-sm text-gray-500">
-              <span>Guides</span>
-              <time datetime="2025-11-01">Nov 1, 2025</time>
-            </div>
+            <p class="mt-2 text-gray-600">Foundations, alliances, transfers, and a step‑by‑step plan to your first redemption.</p>
+            <div class="mt-4 text-sm text-gray-500"><time datetime="2025-11-07">Nov 7, 2025</time></div>
           </article>
 
-          <!-- Post card 2 -->
+          <article class="p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+            <a href="./posts/star-alliance-sweet-spots-2025.html" class="block">
+              <span class="badge">Points & Miles</span>
+              <h3 class="mt-2 text-2xl font-semibold text-gray-900">Star Alliance Sweet Spots (2025 Edition)</h3>
+            </a>
+            <p class="mt-2 text-gray-600">Best value plays on Star with transfer paths and booking strategies.</p>
+            <div class="mt-4 text-sm text-gray-500"><time datetime="2025-11-07">Nov 7, 2025</time></div>
+          </article>
+
+          <article class="p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+            <a href="./posts/oneworld-business-class-north-america.html" class="block">
+              <span class="badge">Points & Miles</span>
+              <h3 class="mt-2 text-2xl font-semibold text-gray-900">Oneworld Business Class from North America</h3>
+            </a>
+            <p class="mt-2 text-gray-600">AA, BA, Qatar, Cathay—what to book and how to minimize fees.</p>
+            <div class="mt-4 text-sm text-gray-500"><time datetime="2025-11-07">Nov 7, 2025</time></div>
+          </article>
+
+          <article class="p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+            <a href="./posts/skyteam-awards-delta-afklm-2025.html" class="block">
+              <span class="badge">Points & Miles</span>
+              <h3 class="mt-2 text-2xl font-semibold text-gray-900">SkyTeam Awards: Finding Delta/AF/KLM Partner Space</h3>
+            </a>
+            <p class="mt-2 text-gray-600">Calendars, married segments, Promo Rewards, and transfer paths.</p>
+            <div class="mt-4 text-sm text-gray-500"><time datetime="2025-11-07">Nov 7, 2025</time></div>
+          </article>
+
+          <article class="p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+            <a href="./posts/amex-membership-rewards-best-uses-2025.html" class="block">
+              <span class="badge">Points & Miles</span>
+              <h3 class="mt-2 text-2xl font-semibold text-gray-900">Best Uses of Amex Membership Rewards (2025)</h3>
+            </a>
+            <p class="mt-2 text-gray-600">Top MR partners, sweet spots, transfer timing, and booking tips.</p>
+            <div class="mt-4 text-sm text-gray-500"><time datetime="2025-11-07">Nov 7, 2025</time></div>
+          </article>
+
+          <article class="p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+            <a href="./posts/chase-ultimate-rewards-top-redemptions-2025.html" class="block">
+              <span class="badge">Points & Miles</span>
+              <h3 class="mt-2 text-2xl font-semibold text-gray-900">Chase Ultimate Rewards: Top Airline Redemptions</h3>
+            </a>
+            <p class="mt-2 text-gray-600">United, Aeroplan, Avios, Virgin—when to use which and why.</p>
+            <div class="mt-4 text-sm text-gray-500"><time datetime="2025-11-07">Nov 7, 2025</time></div>
+          </article>
+
+          <article class="p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+            <a href="./posts/award-booking-mistakes-to-avoid-2025.html" class="block">
+              <span class="badge">Guides</span>
+              <h3 class="mt-2 text-2xl font-semibold text-gray-900">9 Common Award Booking Mistakes</h3>
+            </a>
+            <p class="mt-2 text-gray-600">Avoid transfers gone wrong, phantom space, surcharges, and more.</p>
+            <div class="mt-4 text-sm text-gray-500"><time datetime="2025-11-07">Nov 7, 2025</time></div>
+          </article>
+
+          <article class="p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+            <a href="./posts/using-alerts-last-minute-award-space.html" class="block">
+              <span class="badge">Guides</span>
+              <h3 class="mt-2 text-2xl font-semibold text-gray-900">Using Alerts to Catch Last‑Minute Award Space</h3>
+            </a>
+            <p class="mt-2 text-gray-600">Timing windows, routing tactics, and how to act fast.</p>
+            <div class="mt-4 text-sm text-gray-500"><time datetime="2025-11-07">Nov 7, 2025</time></div>
+          </article>
+
+          <article class="p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+            <a href="./posts/stopovers-open-jaws-guide-2025.html" class="block">
+              <span class="badge">Guides</span>
+              <h3 class="mt-2 text-2xl font-semibold text-gray-900">Stopovers and Open‑Jaws: 2025 Guide</h3>
+            </a>
+            <p class="mt-2 text-gray-600">Programs that allow them, practical itineraries, and pricing.</p>
+            <div class="mt-4 text-sm text-gray-500"><time datetime="2025-11-07">Nov 7, 2025</time></div>
+          </article>
+
+          <article class="p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+            <a href="./posts/family-award-travel-premium-cabins.html" class="block">
+              <span class="badge">Guides</span>
+              <h3 class="mt-2 text-2xl font-semibold text-gray-900">Family Award Travel: 3+ Premium Seats</h3>
+            </a>
+            <p class="mt-2 text-gray-600">Seasons, routes, programs, and alert strategies for families.</p>
+            <div class="mt-4 text-sm text-gray-500"><time datetime="2025-11-07">Nov 7, 2025</time></div>
+          </article>
+
+          <!-- Older posts -->
           <article class="p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
             <a href="./posts/transfer-partners-guide.html" class="block">
-              <h2 class="text-2xl font-bold text-gray-900">Transfer Partners 101: Getting More Value From Your Points</h2>
+              <span class="badge">Points & Miles</span>
+              <h3 class="mt-2 text-2xl font-semibold text-gray-900">Transfer Partners 101</h3>
             </a>
-            <p class="mt-3 text-gray-600">
-              Understand transfer times, sweet spots, and how to align bank currencies with airline programs for outsized value.
-            </p>
-            <div class="mt-4 flex items-center justify-between text-sm text-gray-500">
-              <span>Points & Miles</span>
-              <time datetime="2025-11-03">Nov 3, 2025</time>
-            </div>
+            <p class="mt-2 text-gray-600">Understand transfer times, sweet spots, and aligning currencies.</p>
+            <div class="mt-4 text-sm text-gray-500"><time datetime="2025-11-03">Nov 3, 2025</time></div>
+          </article>
+
+          <article class="p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+            <a href="./posts/how-to-find-award-flights-2025.html" class="block">
+              <span class="badge">Guides</span>
+              <h3 class="mt-2 text-2xl font-semibold text-gray-900">How to Find Award Flights in 2025</h3>
+            </a>
+            <p class="mt-2 text-gray-600">A repeatable process for surfacing real award seats.</p>
+            <div class="mt-4 text-sm text-gray-500"><time datetime="2025-11-01">Nov 1, 2025</time></div>
           </article>
         </div>
 

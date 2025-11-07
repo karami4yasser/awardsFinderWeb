@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Update the domain below if your canonical domain differs -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Core pages -->
   <url>
@@ -41,16 +40,78 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Blog posts -->
+  <!-- Blog posts: Nov 7, 2025 -->
   <url>
-    <loc>https://awardsfinder.app/blog/posts/how-to-find-award-flights-2025.html</loc>
-    <lastmod>2025-11-01</lastmod>
+    <loc>https://awardsfinder.app/blog/posts/beginners-guide-points-miles-2025.html</loc>
+    <lastmod>2025-11-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://awardsfinder.app/blog/posts/star-alliance-sweet-spots-2025.html</loc>
+    <lastmod>2025-11-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://awardsfinder.app/blog/posts/oneworld-business-class-north-america.html</loc>
+    <lastmod>2025-11-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://awardsfinder.app/blog/posts/skyteam-awards-delta-afklm-2025.html</loc>
+    <lastmod>2025-11-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://awardsfinder.app/blog/posts/amex-membership-rewards-best-uses-2025.html</loc>
+    <lastmod>2025-11-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://awardsfinder.app/blog/posts/chase-ultimate-rewards-top-redemptions-2025.html</loc>
+    <lastmod>2025-11-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://awardsfinder.app/blog/posts/award-booking-mistakes-to-avoid-2025.html</loc>
+    <lastmod>2025-11-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://awardsfinder.app/blog/posts/using-alerts-last-minute-award-space.html</loc>
+    <lastmod>2025-11-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://awardsfinder.app/blog/posts/stopovers-open-jaws-guide-2025.html</loc>
+    <lastmod>2025-11-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://awardsfinder.app/blog/posts/family-award-travel-premium-cabins.html</loc>
+    <lastmod>2025-11-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Previously published posts -->
+  <url>
     <loc>https://awardsfinder.app/blog/posts/transfer-partners-guide.html</loc>
     <lastmod>2025-11-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://awardsfinder.app/blog/posts/how-to-find-award-flights-2025.html</loc>
+    <lastmod>2025-11-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
