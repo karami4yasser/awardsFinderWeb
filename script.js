@@ -399,5 +399,122 @@
         );
       }
     } catch (_) {}
+
+    // ---------- Scroll reveal, stagger, counters, parallax ----------
+    try {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Helper: set initial hidden state
+      const setHidden = (el, dir = 'up') => {
+        el.style.opacity = '0';
+        el.style.transformOrigin = '50% 50%';
+        if (dir === 'right') {
+          el.style.transform = 'translateX(24px)';
+        } else if (dir === 'in') {
+          el.style.transform = 'scale(0.98)';
+        } else {
+          el.style.transform = 'translateY(24px)';
+        }
+        el.style.transition = 'opacity 600ms ease, transform 600ms ease';
+        el.style.willChange = 'opacity, transform';
+      };
+      const reveal = (el) => {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      };
+
+      // Individual elements: [data-animate]
+      const animated = Array.from(document.querySelectorAll('[data-animate]'));
+      animated.forEach((el) => setHidden(el, el.getAttribute('data-animate') || 'up'));
+
+      // Staggered containers: [data-animate-children]
+      const containers = Array.from(document.querySelectorAll('[data-animate-children]'));
+      containers.forEach((c) => {
+        const dir = c.getAttribute('data-animate-children') || 'up';
+        const children = Array.from(c.children);
+        children.forEach((ch) => setHidden(ch, dir));
+      });
+
+      if (!prefersReduced) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+
+            // Staggered containers
+            if (el.hasAttribute('data-animate-children')) {
+              const delay = parseInt(el.getAttribute('data-stagger') || '80', 10);
+              Array.from(el.children).forEach((child, idx) => {
+                setTimeout(() => reveal(child), idx * delay);
+              });
+              io.unobserve(el);
+              return;
+            }
+
+            // Single element
+            reveal(el);
+            io.unobserve(el);
+          });
+        }, { threshold: 0.2 });
+
+        animated.forEach((el) => io.observe(el));
+        containers.forEach((c) => io.observe(c));
+      } else {
+        // If reduced motion: just show everything
+        animated.forEach(reveal);
+        containers.forEach((c) => Array.from(c.children).forEach(reveal));
+      }
+
+      // Counter: [data-counter-to]
+      const counters = Array.from(document.querySelectorAll('[data-counter-to]'));
+      const animateCounter = (el) => {
+        const target = parseInt(el.getAttribute('data-counter-to') || '0', 10);
+        const suffix = el.getAttribute('data-counter-suffix') || '';
+        if (!Number.isFinite(target)) return;
+        const duration = 1200;
+        const start = performance.now();
+        const startVal = 0;
+
+        const step = (now) => {
+          const p = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+          const val = Math.floor(startVal + (target - startVal) * eased);
+          el.textContent = `${val}${suffix}`;
+          if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      };
+
+      if (!prefersReduced) {
+        const io2 = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            animateCounter(el);
+            io2.unobserve(el);
+          });
+        }, { threshold: 0.6 });
+        counters.forEach((el) => io2.observe(el));
+      } else {
+        counters.forEach((el) => el.textContent = `${el.getAttribute('data-counter-to') || '0'}${el.getAttribute('data-counter-suffix') || ''}`);
+      }
+
+      // Parallax: hero blob subtle movement
+      const blob = document.getElementById('hero-blob');
+      if (blob && !prefersReduced) {
+        let raf = null;
+        const onScroll = () => {
+          if (raf) return;
+          raf = requestAnimationFrame(() => {
+            const y = window.scrollY || 0;
+            const translate = Math.min(40, y * 0.05);
+            blob.style.transform = `translateY(${translate}px)`;
+            raf = null;
+          });
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+      }
+    } catch (_) {}
+
   });
 })();
