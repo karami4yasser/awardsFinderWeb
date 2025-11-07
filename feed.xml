@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Awards Finder Blog</title>
+    <link>https://awardsfinder.app/blog/</link>
+    <description>Award travel tips, points guides, transfer partner strategies, and product updates from Awards Finder.</description>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Nov 2025 21:33:00 GMT</lastBuildDate>
+    <ttl>180</ttl>
+    <image>
+      <url>https://awardsfinder.app/images/appLogoBig.png</url>
+      <title>Awards Finder Blog</title>
+      <link>https://awardsfinder.app/blog/</link>
+    </image>
+
+    <item>
+      <title>How to Find Award Flights in 2025: A Practical Guide</title>
+      <link>https://awardsfinder.app/blog/posts/how-to-find-award-flights-2025.html</link>
+      <guid isPermaLink="true">https://awardsfinder.app/blog/posts/how-to-find-award-flights-2025.html</guid>
+      <pubDate>Sat, 01 Nov 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[A step-by-step process to find real award availability in 2025, including search tactics, timing, alerts, and transfer strategy.]]></description>
+    </item>
+
+    <item>
+      <title>Transfer Partners 101: Getting More Value From Your Points</title>
+      <link>https://awardsfinder.app/blog/posts/transfer-partners-guide.html</link>
+      <guid isPermaLink="true">https://awardsfinder.app/blog/posts/transfer-partners-guide.html</guid>
+      <pubDate>Mon, 03 Nov 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[Understand transfer partners, timing, sweet spots, and strategy to get more value from your bank points when booking award travel.]]></description>
+    </item>
+  </channel>
+</rss>

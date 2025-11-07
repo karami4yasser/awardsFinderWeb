@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://awardsfinder.app/sitemap.xml
