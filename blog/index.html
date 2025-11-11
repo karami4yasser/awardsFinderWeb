@@ -3,61 +3,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Awards Finder Blog — Award Travel Tips, Guides, and Updates</title>
-  <meta name="description" content="Award travel tips, points guides, transfer partner strategies, and product updates from Awards Finder."/>
+  <title>Flight Awards Blog — Award Travel Tips, Guides, and Updates</title>
+  <meta name="description" content="Award travel tips, points guides, transfer partner strategies, and product updates from Flight Awards."/>
   <meta name="keywords" content="award travel blog, points and miles, transfer partners, award availability, award alerts, award booking tips"/>
   <link rel="canonical" href="https://awardsfinder.app/blog/"/>
 
   <!-- Open Graph -->
   <meta property="og:type" content="website"/>
-  <meta property="og:title" content="Awards Finder Blog — Award Travel Tips, Guides, and Updates"/>
-  <meta property="og:description" content="Award travel tips, points guides, transfer partner strategies, and product updates from Awards Finder."/>
+  <meta property="og:title" content="Flight Awards Blog — Award Travel Tips, Guides, and Updates"/>
+  <meta property="og:description" content="Award travel tips, points guides, transfer strategies, and product updates."/>
   <meta property="og:url" content="https://awardsfinder.app/blog/"/>
-  <meta property="og:image" content="https://awardsfinder.app/images/app_screen.png"/>
-  <meta property="og:site_name" content="Awards Finder"/>
+  <meta property="og:image" content="https://awardsfinder.app/images/appLogoBig.png"/>
+  <meta property="og:site_name" content="Flight Awards"/>
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Awards Finder Blog — Award Travel Tips, Guides, and Updates"/>
-  <meta name="twitter:description" content="Award travel tips, points guides, transfer partner strategies, and product updates."/>
-  <meta name="twitter:image" content="https://awardsfinder.app/images/app_screen.png"/>
+  <meta name="twitter:title" content="Flight Awards Blog — Award Travel Tips, Guides, and Updates"/>
+  <meta name="twitter:description" content="Award travel tips, points guides, transfer strategies, and product updates."/>
+  <meta name="twitter:image" content="https://awardsfinder.app/images/appLogoBig.png"/>
 
-  <link rel="alternate" type="application/rss+xml" title="Awards Finder RSS" href="/feed.xml"/>
+  <link rel="alternate" type="application/rss+xml" title="Flight Awards RSS" href="/feed.xml"/>
 
   <script src="https://cdn.tailwindcss.com"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 
   <style>
     :root {
-      --brand-primary: #1967d2; /* theme.colorBlue */
-      --brand-accent: #fca311;  /* theme.colorGold */
-      --brand-neutral: #1A1F24;
+      --brand-primary: #2563eb;
+      --brand-accent: #fca311;
+      --base-900: #0B0F1A;
+      --base-800: #0E1422;
     }
-    body { font-family: 'Inter', sans-serif; }
-    .hero-bg {
-      background: linear-gradient(180deg, rgba(25,103,210,0.06), rgba(25,103,210,0.02));
+    body { font-family: 'Inter', sans-serif; background: var(--base-900); color: #e2e8f0; }
+    .glass { background: rgba(13,16,26,0.6); backdrop-filter: saturate(140%) blur(10px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; }
+    .btn { transition: all .25s ease; }
+    .btn-primary { background: linear-gradient(90deg, var(--brand-primary), #4f8fe0); color: #fff; box-shadow: 0 8px 32px rgba(37,99,235,.25); }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 12px 44px rgba(37,99,235,.35); }
+    .btn-secondary { background: transparent; color: #cbd5e1; border: 1px solid rgba(255,255,255,0.12); }
+    .badge { display:inline-flex; align-items:center; padding:4px 10px; font-size:12px; border-radius:999px; background: rgba(37,99,235,0.12); color:#93c5fd; border:1px solid rgba(37,99,235,0.28); }
+    .hero-bg { position: relative; }
+    .hero-aurora { position:absolute; inset:-20% -10% auto -10%; height: 40vh; filter: blur(60px); opacity: .28;
+      background: radial-gradient(40% 50% at 20% 30%, rgba(37,99,235,.35), transparent 60%),
+                  radial-gradient(30% 40% at 70% 20%, rgba(252,163,17,.22), transparent 60%),
+                  radial-gradient(40% 50% at 60% 70%, rgba(37,99,235,.25), transparent 60%);
+      pointer-events:none;
     }
-    .gradient-text {
-      background: linear-gradient(to right, var(--brand-primary), var(--brand-accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .cta-button {
-      transition: all 0.3s ease;
-      background-color: var(--brand-primary);
-      color: #fff;
-      box-shadow: 0 4px 10px rgba(25,103,210,0.25);
-    }
-    .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(25,103,210,0.35);
-    }
-    .badge {
-      display:inline-flex; align-items:center; padding:4px 10px; font-size:12px;
-      border-radius:999px; background:#eef2ff; color:#3730a3;
-    }
+    .post-grid a:hover h3 { color:#fff; }
   </style>
 
   <!-- JSON-LD: Blog -->
@@ -65,191 +60,237 @@
   {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "name": "Awards Finder Blog",
+    "name": "Flight Awards Blog",
     "url": "https://awardsfinder.app/blog/",
     "description": "Award travel tips, points guides, transfer partner strategies, and product updates.",
     "publisher": {
       "@type": "Organization",
-      "name": "Awards Finder",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://awardsfinder.app/images/appLogoBig.png"
-      }
+      "name": "Flight Awards",
+      "logo": { "@type": "ImageObject", "url": "https://awardsfinder.app/images/appLogoBig.png" }
     }
   }
   </script>
 </head>
 
-<body class="bg-white text-gray-800">
+<body>
   <!-- Header -->
-  <header id="header" class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b">
-    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="../index.html" class="flex items-center space-x-2">
-        <img src="../images/appLogoBig.png" alt="Awards Finder Logo" class="h-8 w-8"/>
-        <span class="text-xl md:text-2xl font-bold">Awards Finder</span>
-      </a>
-      <nav class="hidden md:flex items-center space-x-6">
-        <a href="../index.html#features" class="text-gray-600 hover:text-[color:var(--brand-primary)]">Features</a>
-        <a href="../index.html#how-it-works" class="text-gray-600 hover:text-[color:var(--brand-primary)]">How It Works</a>
-        <a href="./index.html" class="text-gray-900 font-semibold">Blog</a>
-        <a href="../support.html" class="text-gray-600 hover:text-[color:var(--brand-primary)]">Support</a>
-      </nav>
-      <a href="../index.html#download" class="hidden md:inline-block px-4 py-2 rounded-full cta-button">Get the App</a>
-      <button id="mobile-menu-button" class="md:hidden text-gray-700" aria-label="Open Menu">
-        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
-        </svg>
-      </button>
+  <header class="fixed top-0 left-0 right-0 z-50 glass">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between py-4">
+        <a href="../index.html" class="flex items-center gap-2">
+          <img src="../images/appLogoBig.png" alt="Flight Awards Logo" class="h-8 w-8"/>
+          <span class="text-xl md:text-2xl font-bold text-white">Flight Awards</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm text-slate-300">
+          <a href="../index.html#features" class="hover:text-white transition">Features</a>
+          <a href="../index.html#pricing" class="hover:text-white transition">Pricing</a>
+          <a href="./index.html" class="text-white font-semibold">Blog</a>
+          <a href="../support.html" class="hover:text-white transition">Support</a>
+        </nav>
+        <div class="hidden md:flex items-center gap-3">
+          <a href="../index.html#cta" class="btn btn-primary inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold">Get Lifetime Deal</a>
+        </div>
+        <button id="mobile-menu-button" class="md:hidden text-slate-200" aria-label="Open Menu">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+          </svg>
+        </button>
+      </div>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 bg-white/95 border-t">
-      <a href="../index.html#features" class="block py-2 text-gray-700 hover:text-[color:var(--brand-primary)]">Features</a>
-      <a href="../index.html#how-it-works" class="block py-2 text-gray-700 hover:text-[color:var(--brand-primary)]">How It Works</a>
-      <a href="./index.html" class="block py-2 text-gray-900 font-semibold">Blog</a>
-      <a href="../index.html#download" class="block mt-3 text-center px-5 py-2 rounded-full cta-button">Get the App</a>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 bg-[rgba(14,20,34,0.9)] border-t border-white/10 backdrop-blur">
+      <a href="../index.html#features" class="block py-2 text-slate-200">Features</a>
+      <a href="../index.html#pricing" class="block py-2 text-slate-200">Pricing</a>
+      <a href="./index.html" class="block py-2 text-white font-semibold">Blog</a>
+      <a href="../index.html#cta" class="block mt-3 text-center rounded-full px-5 py-2.5 text-sm font-semibold btn btn-primary">Get Lifetime Deal</a>
     </div>
   </header>
 
-  <main>
+  <main class="pt-24 md:pt-32">
     <!-- Hero -->
     <section class="hero-bg">
-      <div class="container mx-auto px-6 pt-16 pb-10 md:pt-24 md:pb-12 text-center">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-          The <span class="gradient-text">Awards Finder</span> Blog
+      <div class="hero-aurora" aria-hidden="true"></div>
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">
+          The Flight Awards Blog
         </h1>
-        <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-          Tips and guides on finding award availability, maximizing transfer partners, and product updates.
+        <p class="mt-4 text-lg md:text-xl text-slate-300 max-w-3xl mx-auto">
+          Tips and guides on finding award availability, maximizing bank transfers, and booking smarter with alerts.
         </p>
+        <div class="mt-6 flex items-center justify-center gap-3">
+          <span class="badge">New • Real‑time award alerts</span>
+          <a href="../index.html#cta" class="btn btn-primary rounded-full px-5 py-2.5 text-sm font-semibold">Get Lifetime Deal</a>
+          <a href="/feed.xml" class="btn btn-secondary rounded-full px-5 py-2.5 text-sm font-semibold">Subscribe (RSS)</a>
+        </div>
       </div>
     </section>
 
     <!-- Posts list -->
-    <section class="py-10 md:py-16 bg-white">
-      <div class="container mx-auto px-6 max-w-6xl">
+    <section class="py-12">
+      <div class="max-w-7xl mx-auto px-6">
         <div class="mb-6 flex items-center justify-between">
-          <h2 class="text-2xl md:text-3xl font-bold">Latest Posts</h2>
-          <a href="/feed.xml" class="hidden md:inline-flex items-center px-4 py-2 rounded-full cta-button">Subscribe (RSS)</a>
+          <h2 class="text-2xl md:text-3xl font-bold text-white">Latest Posts</h2>
+          <a href="/feed.xml" class="hidden md:inline-flex items-center rounded-full px-4 py-2 btn btn-secondary">Subscribe (RSS)</a>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Nov 7, 2025 (10 new posts) -->
-          <article class="p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+        <div class="post-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- New posts (additions for SEO) -->
+          <article class="card p-6">
+            <a href="./posts/lifetime-deal-flight-awards.html" class="block">
+              <span class="badge">Updates</span>
+              <h3 class="mt-2 text-2xl font-semibold text-slate-100">Limited‑time Lifetime Membership: Is It Worth It?</h3>
+            </a>
+            <p class="mt-2 text-slate-300/80">What’s included, who benefits most, and how to lock it in before it’s gone.</p>
+            <div class="mt-4 text-sm text-slate-400"><time datetime="2025-11-08">Nov 8, 2025</time></div>
+          </article>
+
+          <article class="card p-6">
+            <a href="./posts/real-time-award-alerts-guide-2025.html" class="block">
+              <span class="badge">Guides</span>
+              <h3 class="mt-2 text-2xl font-semibold text-slate-100">Real‑time Award Alerts: Complete 2025 Guide</h3>
+            </a>
+            <p class="mt-2 text-slate-300/80">Routes, timing windows, cabins, and stops—how to set winning alerts.</p>
+            <div class="mt-4 text-sm text-slate-400"><time datetime="2025-11-08">Nov 8, 2025</time></div>
+          </article>
+
+          <article class="card p-6">
+            <a href="./posts/maximize-transfer-bonuses-2025.html" class="block">
+              <span class="badge">Points & Miles</span>
+              <h3 class="mt-2 text-2xl font-semibold text-slate-100">How to Maximize Bank Transfer Bonuses (2025)</h3>
+            </a>
+            <p class="mt-2 text-slate-300/80">Align timing, partners, and alerts to stretch every point further.</p>
+            <div class="mt-4 text-sm text-slate-400"><time datetime="2025-11-08">Nov 8, 2025</time></div>
+          </article>
+
+          <article class="card p-6">
+            <a href="./posts/best-business-class-routes-2025.html" class="block">
+              <span class="badge">Routes</span>
+              <h3 class="mt-2 text-2xl font-semibold text-slate-100">Best Business Class Routes to Target in 2025</h3>
+            </a>
+            <p class="mt-2 text-slate-300/80">Sweet spots across alliances, aircraft to watch, and typical release patterns.</p>
+            <div class="mt-4 text-sm text-slate-400"><time datetime="2025-11-08">Nov 8, 2025</time></div>
+          </article>
+
+          <!-- Existing posts -->
+          <article class="card p-6">
             <a href="./posts/beginners-guide-points-miles-2025.html" class="block">
               <span class="badge">Guides</span>
-              <h3 class="mt-2 text-2xl font-semibold text-gray-900">Beginner’s Guide to Points and Miles in 2025</h3>
+              <h3 class="mt-2 text-2xl font-semibold text-slate-100">Beginner’s Guide to Points and Miles in 2025</h3>
             </a>
-            <p class="mt-2 text-gray-600">Foundations, alliances, transfers, and a step‑by‑step plan to your first redemption.</p>
-            <div class="mt-4 text-sm text-gray-500"><time datetime="2025-11-07">Nov 7, 2025</time></div>
+            <p class="mt-2 text-slate-300/80">Foundations, alliances, transfers, and a step‑by‑step plan to your first redemption.</p>
+            <div class="mt-4 text-sm text-slate-400"><time datetime="2025-11-07">Nov 7, 2025</time></div>
           </article>
 
-          <article class="p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+          <article class="card p-6">
             <a href="./posts/star-alliance-sweet-spots-2025.html" class="block">
               <span class="badge">Points & Miles</span>
-              <h3 class="mt-2 text-2xl font-semibold text-gray-900">Star Alliance Sweet Spots (2025 Edition)</h3>
+              <h3 class="mt-2 text-2xl font-semibold text-slate-100">Star Alliance Sweet Spots (2025 Edition)</h3>
             </a>
-            <p class="mt-2 text-gray-600">Best value plays on Star with transfer paths and booking strategies.</p>
-            <div class="mt-4 text-sm text-gray-500"><time datetime="2025-11-07">Nov 7, 2025</time></div>
+            <p class="mt-2 text-slate-300/80">Best value plays on Star with transfer paths and booking strategies.</p>
+            <div class="mt-4 text-sm text-slate-400"><time datetime="2025-11-07">Nov 7, 2025</time></div>
           </article>
 
-          <article class="p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+          <article class="card p-6">
             <a href="./posts/oneworld-business-class-north-america.html" class="block">
               <span class="badge">Points & Miles</span>
-              <h3 class="mt-2 text-2xl font-semibold text-gray-900">Oneworld Business Class from North America</h3>
+              <h3 class="mt-2 text-2xl font-semibold text-slate-100">Oneworld Business Class from North America</h3>
             </a>
-            <p class="mt-2 text-gray-600">AA, BA, Qatar, Cathay—what to book and how to minimize fees.</p>
-            <div class="mt-4 text-sm text-gray-500"><time datetime="2025-11-07">Nov 7, 2025</time></div>
+            <p class="mt-2 text-slate-300/80">AA, BA, Qatar, Cathay—what to book and how to minimize fees.</p>
+            <div class="mt-4 text-sm text-slate-400"><time datetime="2025-11-07">Nov 7, 2025</time></div>
           </article>
 
-          <article class="p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+          <article class="card p-6">
             <a href="./posts/skyteam-awards-delta-afklm-2025.html" class="block">
               <span class="badge">Points & Miles</span>
-              <h3 class="mt-2 text-2xl font-semibold text-gray-900">SkyTeam Awards: Finding Delta/AF/KLM Partner Space</h3>
+              <h3 class="mt-2 text-2xl font-semibold text-slate-100">SkyTeam Awards: Finding Delta/AF/KLM Partner Space</h3>
             </a>
-            <p class="mt-2 text-gray-600">Calendars, married segments, Promo Rewards, and transfer paths.</p>
-            <div class="mt-4 text-sm text-gray-500"><time datetime="2025-11-07">Nov 7, 2025</time></div>
+            <p class="mt-2 text-slate-300/80">Calendars, married segments, Promo Rewards, and transfer paths.</p>
+            <div class="mt-4 text-sm text-slate-400"><time datetime="2025-11-07">Nov 7, 2025</time></div>
           </article>
 
-          <article class="p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+          <article class="card p-6">
             <a href="./posts/amex-membership-rewards-best-uses-2025.html" class="block">
               <span class="badge">Points & Miles</span>
-              <h3 class="mt-2 text-2xl font-semibold text-gray-900">Best Uses of Amex Membership Rewards (2025)</h3>
+              <h3 class="mt-2 text-2xl font-semibold text-slate-100">Best Uses of Amex Membership Rewards (2025)</h3>
             </a>
-            <p class="mt-2 text-gray-600">Top MR partners, sweet spots, transfer timing, and booking tips.</p>
-            <div class="mt-4 text-sm text-gray-500"><time datetime="2025-11-07">Nov 7, 2025</time></div>
+            <p class="mt-2 text-slate-300/80">Top MR partners, sweet spots, transfer timing, and booking tips.</p>
+            <div class="mt-4 text-sm text-slate-400"><time datetime="2025-11-07">Nov 7, 2025</time></div>
           </article>
 
-          <article class="p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+          <article class="card p-6">
             <a href="./posts/chase-ultimate-rewards-top-redemptions-2025.html" class="block">
               <span class="badge">Points & Miles</span>
-              <h3 class="mt-2 text-2xl font-semibold text-gray-900">Chase Ultimate Rewards: Top Airline Redemptions</h3>
+              <h3 class="mt-2 text-2xl font-semibold text-slate-100">Chase Ultimate Rewards: Top Airline Redemptions</h3>
             </a>
-            <p class="mt-2 text-gray-600">United, Aeroplan, Avios, Virgin—when to use which and why.</p>
-            <div class="mt-4 text-sm text-gray-500"><time datetime="2025-11-07">Nov 7, 2025</time></div>
+            <p class="mt-2 text-slate-300/80">United, Aeroplan, Avios, Virgin—when to use which and why.</p>
+            <div class="mt-4 text-sm text-slate-400"><time datetime="2025-11-07">Nov 7, 2025</time></div>
           </article>
 
-          <article class="p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+          <article class="card p-6">
             <a href="./posts/award-booking-mistakes-to-avoid-2025.html" class="block">
               <span class="badge">Guides</span>
-              <h3 class="mt-2 text-2xl font-semibold text-gray-900">9 Common Award Booking Mistakes</h3>
+              <h3 class="mt-2 text-2xl font-semibold text-slate-100">9 Common Award Booking Mistakes</h3>
             </a>
-            <p class="mt-2 text-gray-600">Avoid transfers gone wrong, phantom space, surcharges, and more.</p>
-            <div class="mt-4 text-sm text-gray-500"><time datetime="2025-11-07">Nov 7, 2025</time></div>
+            <p class="mt-2 text-slate-300/80">Avoid transfers gone wrong, phantom space, surcharges, and more.</p>
+            <div class="mt-4 text-sm text-slate-400"><time datetime="2025-11-07">Nov 7, 2025</time></div>
           </article>
 
-          <article class="p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+          <article class="card p-6">
             <a href="./posts/using-alerts-last-minute-award-space.html" class="block">
               <span class="badge">Guides</span>
-              <h3 class="mt-2 text-2xl font-semibold text-gray-900">Using Alerts to Catch Last‑Minute Award Space</h3>
+              <h3 class="mt-2 text-2xl font-semibold text-slate-100">Using Alerts to Catch Last‑Minute Award Space</h3>
             </a>
-            <p class="mt-2 text-gray-600">Timing windows, routing tactics, and how to act fast.</p>
-            <div class="mt-4 text-sm text-gray-500"><time datetime="2025-11-07">Nov 7, 2025</time></div>
+            <p class="mt-2 text-slate-300/80">Timing windows, routing tactics, and how to act fast.</p>
+            <div class="mt-4 text-sm text-slate-400"><time datetime="2025-11-07">Nov 7, 2025</time></div>
           </article>
 
-          <article class="p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+          <article class="card p-6">
             <a href="./posts/stopovers-open-jaws-guide-2025.html" class="block">
               <span class="badge">Guides</span>
-              <h3 class="mt-2 text-2xl font-semibold text-gray-900">Stopovers and Open‑Jaws: 2025 Guide</h3>
+              <h3 class="mt-2 text-2xl font-semibold text-slate-100">Stopovers and Open‑Jaws: 2025 Guide</h3>
             </a>
-            <p class="mt-2 text-gray-600">Programs that allow them, practical itineraries, and pricing.</p>
-            <div class="mt-4 text-sm text-gray-500"><time datetime="2025-11-07">Nov 7, 2025</time></div>
+            <p class="mt-2 text-slate-300/80">Programs that allow them, practical itineraries, and pricing.</p>
+            <div class="mt-4 text-sm text-slate-400"><time datetime="2025-11-07">Nov 7, 2025</time></div>
           </article>
 
-          <article class="p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+          <article class="card p-6">
             <a href="./posts/family-award-travel-premium-cabins.html" class="block">
               <span class="badge">Guides</span>
-              <h3 class="mt-2 text-2xl font-semibold text-gray-900">Family Award Travel: 3+ Premium Seats</h3>
+              <h3 class="mt-2 text-2xl font-semibold text-slate-100">Family Award Travel: 3+ Premium Seats</h3>
             </a>
-            <p class="mt-2 text-gray-600">Seasons, routes, programs, and alert strategies for families.</p>
-            <div class="mt-4 text-sm text-gray-500"><time datetime="2025-11-07">Nov 7, 2025</time></div>
+            <p class="mt-2 text-slate-300/80">Seasons, routes, programs, and alert strategies for families.</p>
+            <div class="mt-4 text-sm text-slate-400"><time datetime="2025-11-07">Nov 7, 2025</time></div>
           </article>
 
-          <!-- Older posts -->
-          <article class="p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+          <article class="card p-6">
             <a href="./posts/transfer-partners-guide.html" class="block">
               <span class="badge">Points & Miles</span>
-              <h3 class="mt-2 text-2xl font-semibold text-gray-900">Transfer Partners 101</h3>
+              <h3 class="mt-2 text-2xl font-semibold text-slate-100">Transfer Partners 101</h3>
             </a>
-            <p class="mt-2 text-gray-600">Understand transfer times, sweet spots, and aligning currencies.</p>
-            <div class="mt-4 text-sm text-gray-500"><time datetime="2025-11-03">Nov 3, 2025</time></div>
+            <p class="mt-2 text-slate-300/80">Understand transfer times, sweet spots, and aligning currencies.</p>
+            <div class="mt-4 text-sm text-slate-400"><time datetime="2025-11-03">Nov 3, 2025</time></div>
           </article>
 
-          <article class="p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+          <article class="card p-6">
             <a href="./posts/how-to-find-award-flights-2025.html" class="block">
               <span class="badge">Guides</span>
-              <h3 class="mt-2 text-2xl font-semibold text-gray-900">How to Find Award Flights in 2025</h3>
+              <h3 class="mt-2 text-2xl font-semibold text-slate-100">How to Find Award Flights in 2025</h3>
             </a>
-            <p class="mt-2 text-gray-600">A repeatable process for surfacing real award seats.</p>
-            <div class="mt-4 text-sm text-gray-500"><time datetime="2025-11-01">Nov 1, 2025</time></div>
+            <p class="mt-2 text-slate-300/80">A repeatable process for surfacing real award seats.</p>
+            <div class="mt-4 text-sm text-slate-400"><time datetime="2025-11-01">Nov 1, 2025</time></div>
           </article>
         </div>
 
-        <!-- Subscribe box -->
-        <div class="mt-12 p-6 md:p-8 rounded-xl bg-gray-50 border border-gray-200">
+        <!-- Subscribe / CTA -->
+        <div class="mt-12 card p-6 md:p-8">
           <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
-              <h3 class="text-xl font-semibold text-gray-900">Get new posts</h3>
-              <p class="text-gray-600">Subscribe via RSS to get the latest guides and updates.</p>
+              <h3 class="text-xl font-semibold text-white">Don’t miss new guides</h3>
+              <p class="text-slate-300/80">Subscribe via RSS or get the app and turn on award alerts.</p>
             </div>
-            <a href="/feed.xml" class="inline-flex items-center px-4 py-2 rounded-full cta-button">Subscribe (RSS)</a>
+            <div class="flex flex-wrap gap-3">
+              <a href="/feed.xml" class="btn btn-secondary rounded-full px-5 py-2.5 text-sm font-semibold">Subscribe (RSS)</a>
+              <a href="../index.html#cta" class="btn btn-primary rounded-full px-5 py-2.5 text-sm font-semibold">Get Lifetime Deal</a>
+            </div>
           </div>
         </div>
       </div>
@@ -257,29 +298,36 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white">
-    <div class="container mx-auto px-6 py-8">
-      <div class="flex flex-col md:flex-row items-center justify-between">
-        <div class="flex items-center space-x-2">
-          <img src="../images/appLogoBig.png" alt="Awards Finder Logo" class="h-8 w-8"/>
-          <span class="text-xl font-bold">Awards Finder</span>
+  <footer class="bg-[var(--base-900)] text-slate-300 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <img src="../images/appLogoBig.png" alt="Flight Awards Logo" class="h-8 w-8"/>
+          <span class="text-xl font-bold text-white">Flight Awards</span>
         </div>
-        <div class="flex mt-4 md:mt-0 space-x-6">
-          <a href="../policy.html" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
-          <a href="../support.html" class="text-gray-400 hover:text-white transition">Contact</a>
-          <a href="../index.html#download" class="text-gray-400 hover:text-white transition">Get the App</a>
+        <div class="flex flex-wrap justify-center md:justify-end gap-6 text-sm">
+          <a href="../policy.html" class="text-slate-400 hover:text-white transition">Privacy Policy</a>
+          <a href="../support.html" class="text-slate-400 hover:text-white transition">Support</a>
+          <a href="../index.html#cta" class="text-slate-400 hover:text-white transition">Get Lifetime Deal</a>
         </div>
       </div>
-      <div class="mt-8 text-center text-gray-400">
-        &copy; <span id="copy-year"></span> Awards Finder — PureHabit. All Rights Reserved.
+      <div class="mt-8 text-center text-slate-500 text-sm">
+        &copy; <span id="copy-year"></span> Flight Awards — PureHabit. All Rights Reserved.
       </div>
     </div>
   </footer>
 
-  <script src="../script.js"></script>
   <script>
-    // Fallback year
-    (function(){var y=document.getElementById('copy-year'); if(y){y.textContent = new Date().getFullYear();}})();
+    // Mobile menu toggle
+    (function(){
+      const btn = document.getElementById('mobile-menu-button');
+      const menu = document.getElementById('mobile-menu');
+      if (btn && menu) btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+    })();
+
+    // Copy year
+    (function(){ var y=document.getElementById('copy-year'); if(y){ y.textContent = new Date().getFullYear(); }})();
+
   </script>
 </body>
 </html>]]>

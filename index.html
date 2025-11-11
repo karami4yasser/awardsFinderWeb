@@ -3,145 +3,160 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Awards Finder — Find and Track Award Flights</title>
-  <meta name="description" content="Search, track, and book award flights. Set alerts, compare programs, and maximize your points with Awards Finder."/>
+  <title>Flight Awards – Points & Miles — Turn Points into Real Seats</title>
+  <meta name="description"
+    content="Find and track award availability across programs. Set precise alerts and redeem with confidence—without wasting time or points." />
   <meta name="keywords" content="award flights, points, miles, alerts, airlines, credit cards, redemption, flight awards, award availability"/>
-  <link rel="canonical" href="https://awardsfinder.app"/>
-  <link rel="icon" href="/images/appLogoBig.png" sizes="32x32" type="image/png"/>
-  <link rel="apple-touch-icon" href="/images/appLogoBig.png"/>
+  <link rel="canonical" href="https://awardsfinder.app" />
 
-  <!-- Open Graph -->
+  <!-- Use relative paths for local dev -->
+  <link rel="icon" href="images/appLogoBig.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="images/appLogoBig.png" />
+  
+  <!-- Open Graph (kept for prod) -->
   <meta property="og:type" content="website"/>
-  <meta property="og:title" content="Awards Finder — Find and Track Award Flights"/>
-  <meta property="og:description" content="Search, track, and book award flights. Set alerts, compare programs, and maximize your points with Awards Finder."/>
+  <meta property="og:title" content="Flight Awards – Points & Miles — Turn Points into Real Seats" />
+  <meta property="og:description"
+    content="Find and track award availability across programs. Set precise alerts and redeem with confidence—without wasting time or points." />
   <meta property="og:url" content="https://awardsfinder.app/"/>
-  <meta property="og:image" content="https://awardsfinder.app/images/app_screen.png"/>
-  <meta property="og:site_name" content="Awards Finder"/>
+  <meta property="og:image" content="https://awardsfinder.app/images/appLogoBig.png" />
+  <meta property="og:site_name" content="Flight Awards" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Awards Finder — Find and Track Award Flights"/>
-  <meta name="twitter:description" content="Search, track, and book award flights. Set alerts, compare programs, and maximize your points with Awards Finder."/>
-  <meta name="twitter:image" content="https://awardsfinder.app/images/app_screen.png"/>
+  <meta name="twitter:title" content="Flight Awards – Points & Miles — Turn Points into Real Seats" />
+  <meta name="twitter:description"
+    content="Find and track award availability across programs. Set precise alerts and redeem with confidence—without wasting time or points." />
+  <meta name="twitter:image" content="https://awardsfinder.app/images/appLogoBig.png" />
 
-  <link rel="alternate" type="application/rss+xml" title="Awards Finder RSS" href="/feed.xml"/>
+  <link rel="alternate" type="application/rss+xml" title="Flight Awards RSS" href="feed.xml" />
 
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            },
+            base: {
+              900: '#0B0F1A',
+              800: '#0E1422',
+              700: '#131A2A',
+            }
+          },
+          boxShadow: {
+            glow: '0 8px 40px rgba(59,130,246,.25)',
+            'glow-2': '0 12px 48px rgba(59,130,246,.35)',
+          },
+          dropShadow: {
+            glow: '0 0 24px rgba(59,130,246,0.45)',
+          },
+          backgroundImage: {
+            aurora: 'radial-gradient(40% 50% at 20% 30%, rgba(37,99,235,.35), transparent 60%), radial-gradient(30% 40% at 70% 20%, rgba(252,163,17,.25), transparent 60%), radial-gradient(40% 50% at 60% 70%, rgba(37,99,235,.25), transparent 60%), radial-gradient(35% 45% at 30% 80%, rgba(252,163,17,.18), transparent 60%)'
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 
   <style>
     :root {
-      --brand-primary: #1967d2;
+      --brand-primary: #2563eb;
       --brand-accent: #fca311;
-      --brand-neutral: #0b1220;
-      --glass-bg: rgba(255,255,255,0.65);
-      --glass-border: rgba(255,255,255,0.35);
     }
-    body { font-family: 'Inter', sans-serif; }
-
-    /* Aurora animated gradient background */
-    .aurora {
-      position: absolute; inset: -20% -10% auto -10%;
-      height: 60vh; pointer-events: none; filter: blur(60px); opacity: .45;
-      background:
-        radial-gradient(40% 50% at 20% 30%, rgba(25,103,210,.5), transparent 60%),
-        radial-gradient(30% 40% at 70% 20%, rgba(252,163,17,.35), transparent 60%),
-        radial-gradient(40% 50% at 60% 70%, rgba(25,103,210,.35), transparent 60%),
-        radial-gradient(35% 45% at 30% 80%, rgba(252,163,17,.25), transparent 60%);
-      animation: auroraMove 14s ease-in-out infinite alternate;
+    html, body { height: 100%; }
+    body { font-family: 'Inter', sans-serif; background: #0B0F1A; }
+    .glass {
+      background: rgba(13,16,26,0.6);
+      backdrop-filter: saturate(140%) blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-    @keyframes auroraMove {
-      0%   { transform: translateY(0) translateX(0) scale(1); opacity: .45; }
-      50%  { transform: translateY(10px) translateX(8px) scale(1.02); opacity: .5; }
-      100% { transform: translateY(20px) translateX(-6px) scale(1.04); opacity: .55; }
+    .card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
     }
-    @media (prefers-reduced-motion: reduce) {
-      .aurora { animation: none; }
-    }
-
-    .gradient-text {
-      background: linear-gradient(90deg, var(--brand-primary), var(--brand-accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .cta-button {
-      transition: all .25s ease;
+    .btn { transition: all .25s ease; }
+    .btn-primary {
       background: linear-gradient(90deg, var(--brand-primary), #4f8fe0);
       color: #fff;
-      box-shadow: 0 8px 32px rgba(25,103,210,.25);
+      box-shadow: 0 8px 32px rgba(37,99,235,.25);
     }
-    .cta-button:hover { transform: translateY(-1px); box-shadow: 0 12px 40px rgba(25,103,210,.35); }
-
-    /* Glass nav */
-    .glass {
-      background: var(--glass-bg);
-      backdrop-filter: saturate(140%) blur(10px);
-      border-bottom: 1px solid var(--glass-border);
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 12px 44px rgba(37,99,235,.35); }
+    .btn-secondary {
+      background: transparent;
+      color: #cbd5e1;
+      border: 1px solid rgba(255,255,255,0.12);
     }
-
-    /* Bento card styling */
-    .bento {
-      border: 1px solid rgba(15,23,42,0.06);
-      background: #fff;
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(2,6,23,0.05);
-      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    .badge {
+      background: rgba(37,99,235,0.12);
+      color: #93c5fd;
+      border: 1px solid rgba(37,99,235,0.28);
     }
-    .bento:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 46px rgba(2,6,23,0.08);
-      border-color: rgba(15,23,42,0.12);
+    .aurora {
+      position: absolute; inset: -15% -5% auto -5%;
+      height: 60vh; pointer-events: none; filter: blur(70px); opacity: .35;
+      background: radial-gradient(40% 50% at 20% 30%, rgba(37,99,235,.35), transparent 60%),
+                  radial-gradient(30% 40% at 70% 20%, rgba(252,163,17,.25), transparent 60%),
+                  radial-gradient(40% 50% at 60% 70%, rgba(37,99,235,.25), transparent 60%),
+                  radial-gradient(35% 45% at 30% 80%, rgba(252,163,17,.18), transparent 60%);
     }
-
-    /* Subtle section dividers */
-    .section-divider {
-      background: linear-gradient(180deg, rgba(2,6,23,0.02), rgba(2,6,23,0.01));
+    .divider {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.06);
     }
+    /* Reveal on scroll */
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
   </style>
 
-  <!-- JSON-LD: Organization -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Awards Finder",
-    "url": "https://awardsfinder.app/",
-    "logo": "https://awardsfinder.app/images/appLogoBig.png"
-  }
+  {"@context":"https://schema.org","@type":"Organization","name":"Flight Awards","url":"https://awardsfinder.app/","logo":"https://awardsfinder.app/images/appLogoBig.png"}
   </script>
-
-  <!-- JSON-LD: WebSite -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Awards Finder",
-    "url": "https://awardsfinder.app/"
-  }
+  {"@context":"https://schema.org","@type":"WebSite","name":"Flight Awards","url":"https://awardsfinder.app/"}
   </script>
 </head>
 
-<body class="bg-white text-gray-800">
+<body class="text-slate-200 selection:bg-brand-600/30 selection:text-white">
   <!-- Header -->
   <header id="header" class="fixed top-0 left-0 right-0 z-50 glass">
-    <div class="container mx-auto px-6 py-4">
-      <div class="flex items-center justify-between">
-        <a href="#" class="flex items-center space-x-2">
-          <img src="images/appLogoBig.png" alt="Awards Finder Logo" class="h-8 w-8"/>
-          <span class="text-2xl font-bold text-gray-900">Awards Finder</span>
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between py-4">
+        <a href="#" class="flex items-center gap-2">
+          <img src="images/appLogoBig.png" alt="Flight Awards Logo" class="h-8 w-8" />
+          <span class="text-xl md:text-2xl font-bold">Flight Awards</span>
         </a>
-        <nav class="hidden md:flex items-center space-x-8">
-          <a href="#features" class="text-gray-700 hover:text-[color:var(--brand-primary)] transition">Features</a>
-          <a href="#how-it-works" class="text-gray-700 hover:text-[color:var(--brand-primary)] transition">How It Works</a>
-          <a href="#pricing" class="text-gray-700 hover:text-[color:var(--brand-primary)] transition">Pricing</a>
-          <a href="./blog/index.html" class="text-gray-700 hover:text-[color:var(--brand-primary)] transition">Blog</a>
+        <nav class="hidden md:flex items-center gap-8 text-sm text-slate-300">
+          <a href="#features" class="hover:text-white transition">Features</a>
+          <a href="#pricing" class="hover:text-white transition">Pricing</a>
+          <a href="#faq" class="hover:text-white transition">FAQ</a>
+          <a href="./blog/index.html" class="hover:text-white transition">Blog</a>
         </nav>
         <div class="hidden md:flex items-center gap-3">
-          <a href="#download" class="px-5 py-2 rounded-full cta-button font-semibold">Get the App</a>
+          <a href="#cta"
+            class="btn btn-primary inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold">Get
+            Lifetime Deal</a>
         </div>
-        <button id="mobile-menu-button" class="md:hidden text-gray-700" aria-label="Open Menu">
+        <button id="mobile-menu-button" class="md:hidden text-slate-200" aria-label="Open Menu">
           <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
           </svg>
@@ -149,66 +164,135 @@
       </div>
     </div>
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 bg-white/95 border-t">
-      <a href="#features" class="block py-2 text-gray-700 hover:text-[color:var(--brand-primary)]">Features</a>
-      <a href="#how-it-works" class="block py-2 text-gray-700 hover:text-[color:var(--brand-primary)]">How It Works</a>
-      <a href="#pricing" class="block py-2 text-gray-700 hover:text-[color:var(--brand-primary)]">Pricing</a>
-      <a href="./blog/index.html" class="block py-2 text-gray-700 hover:text-[color:var(--brand-primary)]">Blog</a>
-      <a href="#download" class="block mt-4 text-center font-semibold px-5 py-2 rounded-full cta-button">Get the App</a>
+    <div id="mobile-menu" class="hidden md:hidden overflow-hidden border-t border-white/10 bg-base-800/90 backdrop-blur">
+      <div class="px-6 py-4 flex flex-col gap-3 text-slate-200">
+        <a href="#features" class="py-1">Features</a>
+        <a href="#pricing" class="py-1">Pricing</a>
+        <a href="#faq" class="py-1">FAQ</a>
+        <a href="./blog/index.html" class="py-1">Blog</a>
+        <div class="pt-2">
+          <a href="#cta" class="btn btn-primary w-full text-center rounded-full px-5 py-2.5 text-sm font-semibold">Get
+            Lifetime Deal</a>
+        </div>
+      </div>
     </div>
   </header>
 
   <main>
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="relative pt-28 md:pt-36 overflow-hidden">
       <div class="aurora" aria-hidden="true"></div>
-      <div id="hero-blob" class="absolute -top-24 -right-24 h-96 w-96 rounded-full blur-3xl opacity-20" style="background: radial-gradient(circle at 30% 30%, var(--brand-primary), transparent 60%);" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full blur-3xl opacity-20"
+        style="background: radial-gradient(circle at 30% 30%, var(--brand-primary), transparent 60%);" aria-hidden="true">
+      </div>
 
-      <div class="container mx-auto px-6">
+      <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <!-- Left -->
-          <div data-animate="in">
-            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-50 text-[color:var(--brand-primary)] ring-1 ring-blue-200">New • Real-time award alerts</span>
-            <h1 class="mt-4 text-4xl md:text-6xl font-extrabold leading-tight text-gray-900">
-              Turn Points into <span class="gradient-text">Real Seats</span>.
+          <div class="reveal">
+            <span class="badge inline-flex items-center px-3 py-1 rounded-full text-xs font-medium">Limited-time • Lifetime
+              Membership</span>
+            <h1 class="mt-4 text-4xl md:text-6xl font-extrabold leading-tight">
+              Turn Points into <span
+                class="bg-clip-text text-transparent bg-gradient-to-r from-brand-400 to-amber-300 drop-shadow-glow">Real
+                Seats</span>.
             </h1>
-            <p class="mt-5 text-lg md:text-xl text-gray-600">
+            <p class="mt-5 text-lg md:text-xl text-slate-300/80">
               Find and track award availability across programs. Set precise alerts and redeem with confidence—without wasting time or points.
             </p>
 
             <div class="mt-8 flex flex-wrap items-center gap-4">
-              <a href="#" target="_blank" aria-label="Download on App Store" rel="nofollow noopener" class="inline-block">
-                <img src="./images/appstore-icon.png" alt="Download Awards Finder on the App Store" class="w-40 md:w-44 h-auto"/>
-              </a>
-              <a href="#" target="_blank" aria-label="Download on Google Play" rel="nofollow noopener" class="inline-block">
-                <img src="./images/playstore-icon.png" alt="Download Awards Finder on Google Play" class="w-40 md:w-44 h-auto"/>
-              </a>
-              <a href="#how-it-works" class="inline-block text-[color:var(--brand-primary)] font-semibold underline underline-offset-4">See how it works</a>
+              <a href="#cta"
+                class="btn btn-primary inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold">Get
+                Lifetime Deal</a>
+              <a href="#how-it-works"
+                class="btn btn-secondary inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold">See
+                How It Works</a>
             </div>
 
-            <ul class="mt-6 space-y-3 text-gray-700">
-              <li class="flex items-start"><svg class="w-5 h-5 text-green-600 mt-1.5 flex-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="ml-3">Search alliances and bank transfer partners</span></li>
-              <li class="flex items-start"><svg class="w-5 h-5 text-green-600 mt-1.5 flex-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="ml-3">Alerts by route, date range, cabin, and stops</span></li>
-              <li class="flex items-start"><svg class="w-5 h-5 text-green-600 mt-1.5 flex-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="ml-3">Optimize transfers for outsized value</span></li>
+            <ul class="mt-6 space-y-3 text-slate-300/80">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-emerald-400 mt-1.5 flex-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="ml-3">Smart search across alliances and bank transfer partners</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-emerald-400 mt-1.5 flex-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="ml-3">Instant alerts by route, date range, cabin, and stops</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-emerald-400 mt-1.5 flex-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="ml-3">Track redemption value and optimize transfers</span>
+              </li>
             </ul>
-            <div class="mt-6 text-sm text-gray-500">No sign‑in required to browse • Set alerts in minutes</div>
+            <div class="mt-6 text-sm text-slate-400">No sign‑in required to browse • Set alerts in minutes</div>
           </div>
 
-          <!-- Right Bento Preview -->
-          <div class="relative" data-animate="right">
+          <!-- Right Preview -->
+          <div class="relative reveal">
             <div class="grid grid-cols-2 gap-4">
-              <div class="bento p-5 col-span-2">
-                <div class="text-sm text-gray-500">Live availability</div>
-                <img src="images/app_screen.png" alt="Availability preview" class="mt-3 rounded-xl w-full h-auto"/>
+              <div class="card p-5 col-span-2">
+                <div class="text-sm text-slate-400">Live availability</div>
+                <div class="mt-3 rounded-xl w-full border border-white/10 bg-base-800/50 p-4">
+                  <div class="flex items-center justify-between text-xs text-slate-400">
+                    <span>JFK → LHR</span><span>Business · Nonstop</span>
+                  </div>
+                  <div class="mt-3 space-y-2">
+                    <div class="flex items-center justify-between bg-white/5 rounded-lg p-3">
+                      <div class="flex items-center gap-3">
+                        <span class="h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+                        <div>
+                          <div class="text-sm text-white">AA 100 · 20:15 — 08:20</div>
+                          <div class="text-xs text-slate-400">Partner: BA · A350</div>
+                        </div>
+                      </div>
+                      <div class="text-right">
+                        <div class="text-sm font-semibold text-white">57.5k</div>
+                        <div class="text-xs text-slate-400">+ $5.60</div>
+                      </div>
+                      </div>
+                    <div class="flex items-center justify-between bg-white/5 rounded-lg p-3">
+                      <div class="flex items-center gap-3">
+                        <span class="h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+                        <div>
+                          <div class="text-sm text-white">UA 22 · 21:10 — 09:30</div>
+                          <div class="text-xs text-slate-400">Partner: NH · 787</div>
+                        </div>
+                      </div>
+                      <div class="text-right">
+                        <div class="text-sm font-semibold text-white">60k</div>
+                        <div class="text-xs text-slate-400">+ $25.10</div>
+                      </div>
+                      </div>
+                    <div class="flex items-center justify-between bg-white/5 rounded-lg p-3">
+                      <div class="flex items-center gap-3">
+                        <span class="h-2.5 w-2.5 rounded-full bg-amber-400"></span>
+                        <div>
+                          <div class="text-sm text-white">VS 46 · 22:05 — 10:05</div>
+                          <div class="text-xs text-slate-400">Partner: DL · A330</div>
+                        </div>
+                      </div>
+                      <div class="text-right">
+                        <div class="text-sm font-semibold text-white">67.5k</div>
+                        <div class="text-xs text-slate-400">+ $175.00</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="bento p-5">
-                <div class="text-sm text-gray-500">Point Wallet</div>
-                <div class="mt-3 text-2xl font-bold" data-counter-to="7" data-counter-suffix="+">7+</div>
-                <div class="text-sm text-gray-500">bank partners</div>
+              <div class="card p-5">
+                <div class="text-sm text-slate-400">Point Wallet</div>
+                <div class="mt-3 text-2xl font-bold">7+</div>
+                <div class="text-sm text-slate-400">bank partners</div>
               </div>
-              <div class="bento p-5">
-                <div class="text-sm text-gray-500">Smart Filters</div>
-                <ul class="mt-3 text-sm text-gray-700 space-y-1">
+              <div class="card p-5">
+                <div class="text-sm text-slate-400">Smart Filters</div>
+                <ul class="mt-3 text-sm text-slate-300/80 space-y-1">
                   <li>Cabins & Stops</li>
                   <li>Aircraft</li>
                   <li>Partner Programs</li>
@@ -217,182 +301,155 @@
             </div>
           </div>
         </div>
-
-        <!-- Social proof -->
-        <div class="mt-12 md:mt-16 section-divider rounded-2xl p-6 md:p-8" data-animate="in">
-          <p class="text-center text-gray-500 text-sm uppercase tracking-wider">Trusted by award travelers at</p>
+        
+        <!-- Trusted By -->
+        <div class="mt-12 md:mt-16 divider rounded-2xl p-6 md:p-8 reveal">
+          <p class="text-center text-slate-400 text-xs md:text-sm uppercase tracking-wider">Trusted by award travelers at</p>
           <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center justify-items-center opacity-80">
-            <img src="https://placehold.co/140x28/EDF2F7/4A5568?text=Travel+Forum" alt="Travel Forum" class="h-7 w-auto object-contain" loading="lazy"/>
-            <img src="https://placehold.co/140x28/EDF2F7/4A5568?text=Points+Club" alt="Points Club" class="h-7 w-auto object-contain" loading="lazy"/>
-            <img src="https://placehold.co/140x28/EDF2F7/4A5568?text=Miles+Talk" alt="Miles Talk" class="h-7 w-auto object-contain" loading="lazy"/>
-            <img src="https://placehold.co/140x28/EDF2F7/4A5568?text=Flyer+Group" alt="Flyer Group" class="h-7 w-auto object-contain" loading="lazy"/>
-            <img src="https://placehold.co/140x28/EDF2F7/4A5568?text=Travel+Stack" alt="Travel Stack" class="h-7 w-auto object-contain" loading="lazy"/>
+            <img src="https://placehold.co/140x28/1F2937/94A3B8?text=Travel+Forum" alt="Travel Forum"
+              class="h-7 w-auto object-contain" loading="lazy" />
+            <img src="https://placehold.co/140x28/1F2937/94A3B8?text=Points+Club" alt="Points Club"
+              class="h-7 w-auto object-contain" loading="lazy" />
+            <img src="https://placehold.co/140x28/1F2937/94A3B8?text=Miles+Talk" alt="Miles Talk"
+              class="h-7 w-auto object-contain" loading="lazy" />
+            <img src="https://placehold.co/140x28/1F2937/94A3B8?text=Flyer+Group" alt="Flyer Group"
+              class="h-7 w-auto object-contain" loading="lazy" />
+            <img src="https://placehold.co/140x28/1F2937/94A3B8?text=Travel+Stack" alt="Travel Stack"
+              class="h-7 w-auto object-contain" loading="lazy" />
           </div>
         </div>
-      </div>
+        </div>
     </section>
-
-    <!-- Features (Bento) -->
-    <section id="features" class="py-20 bg-white">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
+    
+    <!-- Features -->
+    <section id="features" class="py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
           <h2 class="text-3xl md:text-4xl font-bold">All the tools for effortless redemptions</h2>
-          <p class="mt-4 text-lg text-gray-600">Discover, track, and book award flights across alliances and bank partners.</p>
+          <p class="mt-4 text-lg text-slate-300/80">Discover, track, and book award flights across alliances and bank
+            partners.</p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" data-animate-children="up" data-stagger="100">
-          <div class="bento p-7">
-            <h3 class="text-xl font-semibold">Powerful Award Search</h3>
-            <p class="mt-2 text-gray-600">Scan routes and dates to surface real award seats across programs.</p>
-          </div>
-          <div class="bento p-7">
-            <h3 class="text-xl font-semibold">Real-time Alerts</h3>
-            <p class="mt-2 text-gray-600">Create alerts by route, date range, cabin, and stops—get notified instantly.</p>
-          </div>
-          <div class="bento p-7">
-            <h3 class="text-xl font-semibold">Point Wallet</h3>
-            <p class="mt-2 text-gray-600">Track balances across bank and airline programs in one place.</p>
-          </div>
-          <div class="bento p-7">
-            <h3 class="text-xl font-semibold">Smart Filters</h3>
-            <p class="mt-2 text-gray-600">Filter by cabins, stops, aircraft, and partner programs.</p>
-          </div>
-          <div class="bento p-7">
-            <h3 class="text-xl font-semibold">Transfer Strategy</h3>
-            <p class="mt-2 text-gray-600">Align points with sweet spots for outsized value when you’re ready to book.</p>
-          </div>
-          <div class="bento p-7">
-            <h3 class="text-xl font-semibold">Confident Booking</h3>
-            <p class="mt-2 text-gray-600">Validate availability and act fast when space opens up.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Awards Finder -->
-    <section id="why" class="py-20 section-divider">
-      <div class="container mx-auto px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <div class="lg:col-span-1" data-animate="in">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Why Awards Finder?</h2>
-            <p class="mt-4 text-lg text-gray-600">Award space changes constantly. We help you catch it with the right tools—so you can actually book the seats you want.</p>
-            <div class="mt-6 grid grid-cols-3 gap-4" data-animate-children="in" data-stagger="60">
-              <div class="text-center p-4 rounded-lg bg-white border">
-                <div class="text-2xl font-bold text-gray-900" data-counter-to="30" data-counter-suffix="+">30+</div>
-                <div class="text-sm text-gray-600">Programs</div>
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+          <div class="card p-6 h-full hover:shadow-glow/20 transition reveal">
+            <div class="flex items-center gap-3">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-500/15 text-brand-300">1</span>
+              <h3 class="text-lg font-semibold">Smart Search Across Programs</h3>
               </div>
-              <div class="text-center p-4 rounded-lg bg-white border">
-                <div class="text-2xl font-bold text-gray-900">Real‑time</div>
-                <div class="text-sm text-gray-600">Alerts</div>
-              </div>
-              <div class="text-center p-4 rounded-lg bg-white border">
-                <div class="text-2xl font-bold text-gray-900">Smart</div>
-                <div class="text-sm text-gray-600">Filters</div>
-              </div>
+            <p class="mt-3 text-slate-300/80">Scan routes and dates to surface real award seats across alliances.</p>
             </div>
-          </div>
-
-          <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6" data-animate-children="up" data-stagger="80">
-            <div class="bento p-6">
-              <div class="flex items-center gap-3">
-                <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-blue-700">1</span>
-                <h3 class="text-xl font-semibold text-gray-900">Search smarter</h3>
+          <div class="card p-6 h-full hover:shadow-glow/20 transition reveal">
+            <div class="flex items-center gap-3">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-500/15 text-brand-300">2</span>
+              <h3 class="text-lg font-semibold">Instant Award Alerts</h3>
               </div>
-              <p class="mt-3 text-gray-600">Scan routes and dates to surface real award seats across alliances.</p>
+            <p class="mt-3 text-slate-300/80">Create alerts by route, dates, cabin, and stops — get notified instantly.</p>
             </div>
-            <div class="bento p-6">
-              <div class="flex items-center gap-3">
-                <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-blue-700">2</span>
-                <h3 class="text-xl font-semibold text-gray-900">Set precise alerts</h3>
+          <div class="card p-6 h-full hover:shadow-glow/20 transition reveal">
+            <div class="flex items-center gap-3">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-500/15 text-brand-300">3</span>
+              <h3 class="text-lg font-semibold">Track Redemption Value</h3>
               </div>
-              <p class="mt-3 text-gray-600">We notify you instantly when matching seats appear.</p>
+            <p class="mt-3 text-slate-300/80">Know when a transfer makes sense and avoid stranded points.</p>
             </div>
-            <div class="bento p-6">
-              <div class="flex items-center gap-3">
-                <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-blue-700">3</span>
-                <h3 class="text-xl font-semibold text-gray-900">Redeem better</h3>
+          <div class="card p-6 h-full hover:shadow-glow/20 transition reveal">
+            <div class="flex items-center gap-3">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-500/15 text-brand-300">4</span>
+              <h3 class="text-lg font-semibold">One Dashboard for All Points</h3>
               </div>
-              <p class="mt-3 text-gray-600">Align bank points with the right transfer partners and sweet spots.</p>
-            </div>
-            <div class="bento p-6">
-              <div class="flex items-center gap-3">
-                <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-blue-700">4</span>
-                <h3 class="text-xl font-semibold text-gray-900">Stay in control</h3>
-              </div>
-              <p class="mt-3 text-gray-600">Use the point wallet and filters to book with confidence.</p>
-            </div>
+            <p class="mt-3 text-slate-300/80">Track balances across bank and airline programs in one place.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- How It Works -->
-    <section id="how-it-works" class="py-20 bg-gray-50">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold">Get Started in 3 Easy Steps</h2>
-          <p class="mt-4 text-lg text-gray-600">Plan, monitor, and book your next redemption.</p>
-        </div>
-        <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
-          <div class="flex flex-col items-center text-center max-w-xs bento p-6" data-animate="up">
-            <div class="relative mb-4">
-              <div class="flex items-center justify-center h-24 w-24 bg-white border-2 border-blue-200 rounded-full text-[color:var(--brand-primary)] text-3xl font-bold">1</div>
-            </div>
-            <h3 class="text-xl font-semibold">Set Your Route</h3>
-            <p class="mt-2 text-gray-600">Choose origin, destination, dates, cabin, and stops.</p>
+    <!-- Visual / Insights -->
+    <section id="how-it-works" class="py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div class="reveal">
+            <h2 class="text-3xl md:text-4xl font-bold">Data that simplifies decisions</h2>
+            <p class="mt-4 text-lg text-slate-300/80">
+              See routes, alerts, and point balances in one view. Quickly understand when to transfer and which partners to
+              use.
+            </p>
+            <ul class="mt-6 space-y-3 text-slate-300/80">
+              <li class="flex items-start"><span class="mt-1.5 mr-3 h-2 w-2 rounded-full bg-emerald-400"></span>Historical
+                trends for routes and cabins</li>
+              <li class="flex items-start"><span
+                  class="mt-1.5 mr-3 h-2 w-2 rounded-full bg-emerald-400"></span>Program-specific rules and sweet spots</li>
+              <li class="flex items-start"><span class="mt-1.5 mr-3 h-2 w-2 rounded-full bg-emerald-400"></span>Value
+                scoring to guide your next redemption</li>
+            </ul>
           </div>
-          <div class="flex flex-col items-center text-center max-w-xs bento p-6" data-animate="up">
-            <div class="relative mb-4">
-              <div class="flex items-center justify-center h-24 w-24 bg-white border-2 border-blue-200 rounded-full text-[color:var(--brand-primary)] text-3xl font-bold">2</div>
+<div class="reveal">
+  <div class="card p-4 md:p-6">
+    <div class="relative">
+      <div
+        class="relative rounded-xl w-full h-56 border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent overflow-hidden">
+        <svg viewBox="0 0 200 112" class="absolute inset-0 opacity-60">
+          <g stroke="rgba(255,255,255,0.06)" stroke-width="1">
+            <line x1="0" y1="28" x2="200" y2="28" />
+            <line x1="0" y1="56" x2="200" y2="56" />
+            <line x1="0" y1="84" x2="200" y2="84" />
+          </g>
+        </svg>
+        <svg viewBox="0 0 200 112" class="absolute inset-0">
+          <polyline fill="none" stroke="rgba(16,185,129,0.9)" stroke-width="2"
+            points="0,90 20,80 40,84 60,70 80,74 100,58 120,62 140,56 160,60 180,50 200,54" />
+        </svg>
+      </div>
+                <div class="absolute bottom-3 left-3 right-3 card p-3 border border-emerald-400/20">
+                  <div class="text-xs uppercase tracking-wider text-emerald-300/90">Availability trend · JFK → LHR</div>
+                  <div class="mt-2 h-16 w-full bg-gradient-to-r from-emerald-500/30 to-brand-500/30 rounded overflow-hidden relative">
+                    <svg viewBox="0 0 200 64" class="absolute inset-0 opacity-70">
+                      <polyline fill="none" stroke="rgb(16,185,129)" stroke-width="2"
+                        points="0,50 20,40 40,44 60,30 80,34 100,18 120,22 140,16 160,20 180,10 200,14" />
+                    </svg>
+                  </div>
+                  <p class="mt-2 text-xs text-slate-300/80">When alerts spike, seats are being released — be ready to transfer.</p>
+                  </div>
+              </div>
             </div>
-            <h3 class="text-xl font-semibold">Choose Programs</h3>
-            <p class="mt-2 text-gray-600">Select airline and bank partners you can transfer from.</p>
-          </div>
-          <div class="flex flex-col items-center text-center max-w-xs bento p-6" data-animate="up">
-            <div class="relative mb-4">
-              <div class="flex items-center justify-center h-24 w-24 bg-white border-2 border-blue-200 rounded-full text-[color:var(--brand-primary)] text-3xl font-bold">3</div>
-            </div>
-            <h3 class="text-xl font-semibold">Create Alerts</h3>
-            <p class="mt-2 text-gray-600">We watch availability and notify you instantly.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Testimonials -->
-    <section id="testimonials" class="py-20 bg-white">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
+    <section id="testimonials" class="py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
           <h2 class="text-3xl md:text-4xl font-bold">Loved by Award Travelers</h2>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-animate-children="up" data-stagger="80">
-          <div class="bento p-8">
-            <p class="text-gray-600">"Found business class seats I couldn't see anywhere else. Alerts made it effortless."</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="card p-6 h-full reveal">
+            <p class="text-slate-300/90">“Finally booked my dream flight using miles!”</p>
             <div class="flex items-center mt-6">
-              <img src="https://placehold.co/48x48/E0E0E0/333333?text=JS" class="w-12 h-12 rounded-full" alt="User Avatar"/>
+              <img src="https://placehold.co/48x48/1F2937/94A3B8?text=JS" class="w-12 h-12 rounded-full" alt="User Avatar" />
               <div class="ml-4">
                 <p class="font-semibold">Jessica S.</p>
-                <p class="text-sm text-gray-500">Marketing Manager</p>
+                <p class="text-sm text-slate-400">Marketing Manager</p>
               </div>
             </div>
           </div>
-          <div class="bento p-8">
-            <p class="text-gray-600">"Transferred points and booked within minutes. The filters are spot on."</p>
+          <div class="card p-6 h-full reveal">
+            <p class="text-slate-300/90">“Transferred points and booked within minutes. Alerts are on point.”</p>
             <div class="flex items-center mt-6">
-              <img src="https://placehold.co/48x48/E0E0E0/333333?text=MD" class="w-12 h-12 rounded-full" alt="User Avatar"/>
+              <img src="https://placehold.co/48x48/1F2937/94A3B8?text=MD" class="w-12 h-12 rounded-full" alt="User Avatar" />
               <div class="ml-4">
                 <p class="font-semibold">Mark D.</p>
-                <p class="text-sm text-gray-500">Software Engineer</p>
+                <p class="text-sm text-slate-400">Software Engineer</p>
               </div>
             </div>
           </div>
-          <div class="bento p-8">
-            <p class="text-gray-600">"Booked a family trip on miles for the first time. Saved a ton."</p>
+          <div class="card p-6 h-full reveal">
+            <p class="text-slate-300/90">“Booked a family trip on miles for the first time. Saved a ton.”</p>
             <div class="flex items-center mt-6">
-              <img src="https://placehold.co/48x48/E0E0E0/333333?text=AK" class="w-12 h-12 rounded-full" alt="User Avatar"/>
+              <img src="https://placehold.co/48x48/1F2937/94A3B8?text=AK" class="w-12 h-12 rounded-full" alt="User Avatar" />
               <div class="ml-4">
                 <p class="font-semibold">Anna K.</p>
-                <p class="text-sm text-gray-500">Teacher</p>
+                <p class="text-sm text-slate-400">Teacher</p>
               </div>
             </div>
           </div>
@@ -401,165 +458,217 @@
     </section>
 
     <!-- From the Blog -->
-    <section id="from-blog" class="py-20 bg-gray-50">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
+    <section id="from-blog" class="py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
           <h2 class="text-3xl md:text-4xl font-bold">From the Blog</h2>
-          <p class="mt-4 text-lg text-gray-600">Latest tips and guides to maximize your points.</p>
+          <p class="mt-4 text-lg text-slate-300/80">Guides and updates to help you book smarter with points & miles.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto" data-animate-children="up" data-stagger="100">
-          <article class="bento p-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <article class="card p-6 reveal">
+    <a href="./blog/posts/lifetime-deal-flight-awards.html" class="block">
+      <span class="badge">Updates</span>
+      <h3 class="mt-2 text-2xl font-semibold text-slate-100">Limited‑time Lifetime Membership: Is It Worth It?</h3>
+    </a>
+    <p class="mt-2 text-slate-300/80">What’s included, who benefits most, and how to lock it in before it’s gone.</p>
+    <div class="mt-4 text-sm text-slate-400"><time datetime="2025-11-08">Nov 8, 2025</time></div>
+  </article>
+
+  <article class="card p-6 reveal">
             <a href="./blog/posts/how-to-find-award-flights-2025.html" class="block">
-              <h3 class="text-2xl font-semibold text-gray-900">How to Find Award Flights in 2025</h3>
+              <span class="badge">Guides</span>
+              <h3 class="mt-2 text-2xl font-semibold text-slate-100">How to Find Award Flights in 2025</h3>
             </a>
-            <p class="mt-2 text-gray-600">A repeatable workflow to surface real award seats, plus alert timing and transfers.</p>
-            <div class="mt-4 text-sm text-gray-500"><time datetime="2025-11-01">Nov 1, 2025</time> • Guides</div>
+            <p class="mt-2 text-slate-300/80">A repeatable process for surfacing real award seats.</p>
+            <div class="mt-4 text-sm text-slate-400"><time datetime="2025-11-01">Nov 1, 2025</time></div>
           </article>
-          <article class="bento p-6">
+<article class="card p-6 reveal">
             <a href="./blog/posts/transfer-partners-guide.html" class="block">
-              <h3 class="text-2xl font-semibold text-gray-900">Transfer Partners 101</h3>
+              <span class="badge">Points & Miles</span>
+              <h3 class="mt-2 text-2xl font-semibold text-slate-100">Transfer Partners 101</h3>
             </a>
-            <p class="mt-2 text-gray-600">Match bank currencies to partners, plan transfer timing, and hit sweet spots.</p>
-            <div class="mt-4 text-sm text-gray-500"><time datetime="2025-11-03">Nov 3, 2025</time> • Points & Miles</div>
+            <p class="mt-2 text-slate-300/80">Understand transfer times, sweet spots, and aligning currencies.</p>
+            <div class="mt-4 text-sm text-slate-400"><time datetime="2025-11-03">Nov 3, 2025</time></div>
           </article>
         </div>
+
         <div class="text-center mt-10">
-          <a href="./blog/index.html" class="inline-block font-semibold px-5 py-2 rounded-full cta-button">Read the Blog</a>
+          <a href="./blog/index.html"
+            class="btn btn-primary inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold">Read
+            the Blog</a>
         </div>
       </div>
     </section>
 
     <!-- Pricing -->
-    <section id="pricing" class="py-20 bg-white">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
+    <section id="pricing" class="py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
           <h2 class="text-3xl md:text-4xl font-bold">Plans that fit your travel</h2>
-          <p class="mt-4 text-lg text-gray-600">Start free. Upgrade in-app when you need more alerts and power features.</p>
+          <p class="mt-4 text-lg text-slate-300/80">Start free. Upgrade when you need more alerts and power features.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto" data-animate-children="up" data-stagger="100">
-          <div class="bento p-8">
-            <h3 class="text-2xl font-semibold text-gray-900">Free</h3>
-            <p class="mt-2 text-gray-600">Great for getting started</p>
-            <ul class="mt-6 space-y-3 text-gray-700">
-              <li class="flex items-start"><span class="mt-1.5 mr-3 h-2 w-2 rounded-full bg-green-500"></span>Browse award availability</li>
-              <li class="flex items-start"><span class="mt-1.5 mr-3 h-2 w-2 rounded-full bg-green-500"></span>Create basic alerts</li>
-              <li class="flex items-start"><span class="mt-1.5 mr-3 h-2 w-2 rounded-full bg-green-500"></span>Point wallet overview</li>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <div class="card p-8 h-full reveal">
+            <h3 class="text-2xl font-semibold">Free</h3>
+            <p class="mt-2 text-slate-400">Great for getting started</p>
+            <ul class="mt-6 space-y-3 text-slate-300/80">
+              <li class="flex items-start"><span class="mt-1.5 mr-3 h-2 w-2 rounded-full bg-emerald-400"></span>Browse award
+                availability</li>
+              <li class="flex items-start"><span class="mt-1.5 mr-3 h-2 w-2 rounded-full bg-emerald-400"></span>Create basic
+                alerts</li>
+              <li class="flex items-start"><span class="mt-1.5 mr-3 h-2 w-2 rounded-full bg-emerald-400"></span>Point wallet
+                overview</li>
             </ul>
             <div class="mt-8">
-              <a href="#download" class="inline-block font-semibold px-5 py-2 rounded-full cta-button">Get Started</a>
+              <a href="#cta"
+                class="btn btn-primary inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold">Get
+                Started</a>
             </div>
           </div>
-          <div class="bento p-8 border-2 border-blue-200">
-            <div class="inline-flex items-center px-2 py-1 text-xs font-semibold rounded-full bg-blue-50 text-blue-700">Most Popular</div>
-            <h3 class="mt-3 text-2xl font-semibold text-gray-900">Pro</h3>
-            <p class="mt-2 text-gray-600">For frequent award travelers</p>
-            <ul class="mt-6 space-y-3 text-gray-700">
-              <li class="flex items-start"><span class="mt-1.5 mr-3 h-2 w-2 rounded-full bg-blue-500"></span>Increased alert quotas</li>
-              <li class="flex items-start"><span class="mt-1.5 mr-3 h-2 w-2 rounded-full bg-blue-500"></span>Advanced filters and rules</li>
-              <li class="flex items-start"><span class="mt-1.5 mr-3 h-2 w-2 rounded-full bg-blue-500"></span>Priority monitoring</li>
+<div class="card p-8 h-full border-2 border-brand-500/25 reveal">
+  <div
+    class="inline-flex items-center px-2 py-1 text-xs font-semibold rounded-full bg-brand-500/15 text-brand-200 border border-brand-500/30">
+    Limited Time • Lifetime</div>
+  <h3 class="mt-3 text-2xl font-semibold">Pro</h3>
+  <p class="mt-2 text-slate-400">For frequent award travelers</p>
+  <ul class="mt-6 space-y-3 text-slate-300/80">
+    <li class="flex items-start"><span class="mt-1.5 mr-3 h-2 w-2 rounded-full bg-brand-400"></span>Increased alert
+      quotas</li>
+    <li class="flex items-start"><span class="mt-1.5 mr-3 h-2 w-2 rounded-full bg-brand-400"></span>Advanced filters and
+      rules</li>
+    <li class="flex items-start"><span class="mt-1.5 mr-3 h-2 w-2 rounded-full bg-brand-400"></span>Priority monitoring
+    </li>
             </ul>
-            <div class="mt-8 flex flex-wrap gap-3">
-              <a href="#" aria-label="Download on App Store" class="inline-block"><img src="./images/appstore-icon.png" alt="App Store" class="h-12 w-auto"/></a>
-              <a href="#" aria-label="Download on Google Play" class="inline-block"><img src="./images/playstore-icon.png" alt="Google Play" class="h-12 w-auto"/></a>
+            <div class="mt-8 flex flex-wrap gap-3 items-center">
+              <a href="https://apps.apple.com/app/flight-awards-points-miles/id6754783959" aria-label="Download on App Store"
+                class="inline-block"><img src="images/appstore-icon.png" alt="App Store" class="h-12 w-auto" /></a>
+              <a href="https://play.google.com/store/apps/details?id=com.missingapps.flightawards"
+                aria-label="Download on Google Play" class="inline-block"><img src="images/playstore-icon.png" alt="Google Play"
+                  class="h-12 w-auto" /></a>
             </div>
-            <p class="mt-3 text-sm text-gray-500">In‑app purchases • Cancel anytime</p>
+            <p class="mt-3 text-sm text-slate-500">In‑app purchases • Cancel anytime</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="py-20 bg-gray-50">
-      <div class="container mx-auto px-6 max-w-5xl">
-        <div class="text-center mb-12">
+    <section id="faq" class="py-20">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
           <h2 class="text-3xl md:text-4xl font-bold">Frequently Asked Questions</h2>
-          <p class="mt-4 text-lg text-gray-600">Everything you need to know to get started.</p>
+          <p class="mt-4 text-lg text-slate-300/80">Everything you need to know to get started.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8" data-animate-children="up" data-stagger="80">
-          <div>
-            <h3 class="text-lg font-semibold text-gray-900">What programs can I track?</h3>
-            <p class="mt-2 text-gray-700">Track availability across major alliances and bank transfer partners you can actually use to redeem.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="card p-6 h-full reveal">
+            <h3 class="text-lg font-semibold">What programs can I track?</h3>
+            <p class="mt-2 text-slate-300/80">Track availability across major alliances and bank transfer partners you can
+              actually use to redeem.</p>
           </div>
-          <div>
-            <h3 class="text-lg font-semibold text-gray-900">How do alerts work?</h3>
-            <p class="mt-2 text-gray-700">Create an alert with your route, date range, cabin, and stops. We’ll notify you in real-time when matching seats open up.</p>
+          <div class="card p-6 h-full reveal">
+            <h3 class="text-lg font-semibold">How do alerts work?</h3>
+            <p class="mt-2 text-slate-300/80">Create an alert with your route, date range, cabin, and stops. We’ll notify you in
+              real-time when matching seats open up.</p>
           </div>
-          <div>
-            <h3 class="text-lg font-semibold text-gray-900">Do I need to transfer points first?</h3>
-            <p class="mt-2 text-gray-700">No. Only transfer once you can hold or book. Awards Finder helps you time transfers and avoid stranded points.</p>
+          <div class="card p-6 h-full reveal">
+            <h3 class="text-lg font-semibold">Do I need to transfer points first?</h3>
+            <p class="mt-2 text-slate-300/80">No. Only transfer once you can hold or book. Flight Awards helps you time transfers
+              and avoid stranded points.</p>
           </div>
-          <div>
-            <h3 class="text-lg font-semibold text-gray-900">Is there a free tier?</h3>
-            <p class="mt-2 text-gray-700">Browse and explore freely. Advanced features like increased alert quotas may require a paid plan in the app.</p>
+          <div class="card p-6 h-full reveal">
+            <h3 class="text-lg font-semibold">Is there a free tier?</h3>
+            <p class="mt-2 text-slate-300/80">Browse and explore freely. Advanced features like increased alert quotas may require
+              a paid plan in the app.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Final CTA -->
-    <section id="download" class="py-20 text-center section-divider">
-      <div class="container mx-auto px-6">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Start Finding Award Flights Today</h2>
-        <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Join travelers saving time and points with smarter award searches.</p>
-        <div class="mt-8 flex justify-center items-center space-x-4">
-          <a href="#" target="_blank" aria-label="Download on App Store" rel="nofollow noopener">
-            <img src="./images/appstore-icon.png" alt="Download Awards Finder on the App Store"/>
-          </a>
-          <a href="#" target="_blank" aria-label="Download on Google Play" rel="nofollow noopener">
-            <img src="./images/playstore-icon.png" alt="Download Awards Finder on Google Play"/>
-          </a>
+    <!-- CTA Banner -->
+    <section id="cta" class="py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="card p-10 md:p-12 text-center bg-gradient-to-b from-white/[0.03] to-white/[0.02] reveal">
+          <h3 class="text-2xl md:text-3xl font-bold">Limited-time: Lifetime Membership</h3>
+          <p class="mt-4 text-slate-300/80 max-w-2xl mx-auto">Pay once. Lifetime alerts, priority monitoring, and pro
+            features — available for a limited time.</p>
+          <div class="mt-8 flex flex-wrap justify-center gap-4">
+            <a href="https://apps.apple.com/app/flight-awards-points-miles/id6754783959"
+              class="btn btn-primary inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold">Get
+              Lifetime on App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.missingapps.flightawards"
+              class="btn btn-secondary inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold">Get
+              Lifetime on Google Play</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white">
-    <div class="container mx-auto px-6 py-8">
-      <div class="flex flex-col md:flex-row items-center justify-between">
-        <div class="flex items-center space-x-2">
-          <img src="images/appLogoBig.png" alt="Awards Finder Logo" class="h-8 w-8"/>
-          <span class="text-2xl font-bold">Awards Finder</span>
+  <footer class="bg-base-900 text-slate-300 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <img src="images/appLogoBig.png" alt="Flight Awards Logo" class="h-8 w-8" />
+          <span class="text-xl font-bold">Flight Awards</span>
         </div>
-        <div class="flex mt-4 md:mt-0 space-x-6">
-          <a href="./policy.html" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
-          <a href="./policy.html#terms" class="text-gray-400 hover:text-white transition">Terms of Service</a>
-          <a href="./support.html" class="text-gray-400 hover:text-white transition">Contact</a>
+        <div class="flex flex-wrap justify-center md:justify-end gap-6 text-sm">
+          <a href="policy.html" class="text-slate-400 hover:text-white transition">Privacy Policy</a>
+          <a href="policy.html#terms" class="text-slate-400 hover:text-white transition">Terms of Service</a>
+          <a href="support.html" class="text-slate-400 hover:text-white transition">Support</a>
         </div>
       </div>
-      <div class="mt-8 text-center text-gray-400">
-        &copy; <span id="copy-year"></span> Awards Finder — PureHabit. All Rights Reserved.
+      <div class="mt-8 text-center text-slate-500 text-sm">
+        &copy; <span id="copy-year"></span> Flight Awards — PureHabit. All Rights Reserved.
       </div>
     </div>
   </footer>
 
-  <!-- External site script (handles theme, scroll, menu, copy, etc.) -->
-  <script src="./script.js"></script>
-  <script>
-    // Minimal year fallback in case external script fails to load
-    (function(){var y=document.getElementById('copy-year'); if(y){y.textContent = new Date().getFullYear();}})();
-  </script>
-
   <!-- Sticky Mobile CTA -->
-  <div id="sticky-cta" class="fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur border-t p-3 md:hidden hidden">
-    <div class="container mx-auto px-4">
+  <div id="sticky-cta"
+    class="fixed inset-x-0 bottom-0 z-40 bg-base-800/95 backdrop-blur border-t border-white/10 p-3 md:hidden hidden">
+    <div class="max-w-7xl mx-auto px-4">
       <div class="flex items-center justify-between gap-3">
         <div class="flex items-center gap-3">
-          <img src="./images/appLogoBig.png" alt="Awards Finder" class="h-8 w-8 rounded"/>
+          <img src="images/appLogoBig.png" alt="Flight Awards" class="h-8 w-8 rounded" />
           <div class="text-sm">
-            <div class="font-semibold text-gray-900">Start tracking award seats</div>
-            <div class="text-gray-500">Get the app</div>
+            <div class="font-semibold text-white">Start tracking award seats</div>
+            <div class="text-slate-400">Get the app</div>
           </div>
         </div>
         <div class="flex items-center gap-2">
-          <a href="#" aria-label="Download on App Store"><img src="./images/appstore-icon.png" alt="App Store" class="h-8 w-auto"/></a>
-          <a href="#" aria-label="Download on Google Play"><img src="./images/playstore-icon.png" alt="Google Play" class="h-8 w-auto"/></a>
+          <a href="https://apps.apple.com/app/flight-awards-points-miles/id6754783959" aria-label="Download on App Store"><img
+              src="images/appstore-icon.png" alt="App Store" class="h-8 w-auto" /></a>
+          <a href="https://play.google.com/store/apps/details?id=com.missingapps.flightawards"
+            aria-label="Download on Google Play"><img src="images/playstore-icon.png" alt="Google Play" class="h-8 w-auto" /></a>
         </div>
       </div>
     </div>
   </div>
+<!-- Minimal JS: mobile nav, reveal on scroll, year, sticky cta -->
   <script>
-    // Show sticky CTA after scrolling a bit on mobile
+          // Mobile menu toggle
+          (function () {
+            const btn = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+            if (btn && menu) btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+          })();
+
+        // Copy year
+        (function () { var y = document.getElementById('copy-year'); if (y) { y.textContent = new Date().getFullYear(); } })();
+
+        // Reveal on scroll
+        (function () {
+          const els = Array.from(document.querySelectorAll('.reveal'));
+          const io = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+              if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); }
+            });
+          }, { threshold: 0.12 });
+          els.forEach(el => io.observe(el));
+        })();
+
+        // Sticky CTA on mobile
     (function () {
       const bar = document.getElementById('sticky-cta');
       if (!bar) return;
